@@ -1,0 +1,1842 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalkWave</title>
+    <!-- Favicon-link -->
+    <link rel="shortcut icon" href="assets/img/logo/favicon.png" type="image/x-icon">
+
+    <!-- Fontawesome6-Js-link -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <!-- <link rel="stylesheet" href="assets/css/fontawesome.min.css"> -->
+    <!-- Bootstrap5-Css-link -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- Owl-carousel-Css-link -->
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+    <!-- Slick slider Css link -->
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/slick-theme.css">
+    <!-- select2-Css-link -->
+    <link rel="stylesheet" href="assets/css/select2.min.css">
+    <!-- fancybox map css link -->
+    <link rel="stylesheet" href="assets/css/fancybox.css">
+
+
+    <!-- Style Css link -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body onload="preloaderFunction()" class="">
+
+    <!-- Preloader section start -->
+    <div id="preloader">
+        <div class="load">
+            <hr />
+            <hr />
+            <hr />
+            <hr />
+        </div>
+    </div>
+    <!-- Preloader section end -->
+
+    <!-- Nav section start -->
+    <nav class="navbar fixed-top navbar-expand-lg transparent">
+        <div class="container">
+            <a class="navbar-brand logo" href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar">
+                <i class="fa-light fa-list"></i>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbar">
+                <div class="offcanvas-header">
+                    <a class="navbar-brand" href="index.html"><img class="logo" src="assets/img/logo/logo-white.png"
+                            alt=""></a>
+                    <button type="button" class="cmn-btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><i
+                            class="fa-light fa-arrow-right"></i></button>
+                </div>
+                <div class="offcanvas-body align-items-center justify-content-between">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pricing.html">pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="features.html">features</a>
+                        </li>
+                        <li class="nav-item d-flex align-items-center">
+                            <a class="get-start-btn" href="contact.html">demo</a>
+                        </li>
+                        <li class="nav-item d-flex align-items-center">
+                            <a class="login-btn" href="contact.html">free trial</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="nav-right">
+                <ul class="custom-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html"><i class="fa-regular fa-user"></i></a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <div class="profile-box">
+                            <div class="profile">
+                                <img src="./assets/img/Person/1.jpg" class="img-fluid" alt="">
+                            </div>
+                            <ul class="user-dropdown">
+                                <li>
+                                    <a href="user-panel.html"> <i class="fal fa-user"></i> View Profile </a>
+                                </li>
+                                <li>
+                                    <a href="support-ticket.html"> <i class="fal fa-user-headset"></i> Support </a>
+                                </li>
+                                <li>
+                                    <a href="edit-profile.html"> <i class="fal fa-user-cog"></i> Account Settings
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href=""> <i class="fal fa-sign-out-alt"></i> Sign Out </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li> -->
+                    <li class="nav-item">
+                        <div class="language-box-large">
+                            <div class="dropdown">
+                                <button class="cmn-dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <img src="./assets/img/mini-flag/us.svg" alt="">
+                                    <i class="fa-solid fa-angle-down"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <div class="region-container">
+                                        <div class="region-box-large">
+                                            <div class="region-box">
+                                                <h5 class="mb-15">Europe</h5>
+                                                <div class="region-list">
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/bg.svg" alt="" />
+                                                        Български
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/cz.svg" alt="" />
+                                                        Čeština
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/dk.svg" alt="" />
+                                                        Dansk
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/de.svg" alt="" />
+                                                        Deutsch
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/ee.svg" alt="" />
+                                                        Eesti
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/es.svg" alt="" />
+                                                        Español
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/fr.svg" alt="" />
+                                                        Français
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/gr.svg" alt="" />
+                                                        Ελληνικα
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/hr.svg" alt="" />
+                                                        Hrvatski
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/it.svg" alt="" />
+                                                        Italiano
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/bg.svg" alt="" />
+                                                        Български
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/cz.svg" alt="" />
+                                                        Čeština
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/dk.svg" alt="" />
+                                                        Dansk
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/de.svg" alt="" />
+                                                        Deutsch
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/ee.svg" alt="" />
+                                                        Eesti
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/es.svg" alt="" />
+                                                        Español
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/fr.svg" alt="" />
+                                                        Français
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/gr.svg" alt="" />
+                                                        Ελληνικα
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/hr.svg" alt="" />
+                                                        Hrvatski
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/it.svg" alt="" />
+                                                        Italiano
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/es.svg" alt="" />
+                                                        Español
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="region-box-small">
+                                            <div class="region-box">
+                                                <h5 class="mb-15">Asia</h5>
+                                                <div class="region-list">
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/cn.svg" alt="" />
+                                                        简体中文
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/ph.svg" alt="" />
+                                                        Tagalog
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/vn.svg" alt="" />
+                                                        Tiếng Việt
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <div class="region-box">
+                                                <h5 class="mt-20 mb-15">Middle East</h5>
+                                                <div class="region-list">
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/sa.svg" alt="" />
+                                                        العربية
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="region-box">
+                                                <h5 class="mt-20 mb-15">America</h5>
+                                                <div class="region-list">
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/us.svg" alt="" />
+                                                        English
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/br.svg" alt="" />
+                                                        Português
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Nav section end -->
+
+    <!-- Bottom Mobile Tab nav section start -->
+    <ul class="nav bottom-nav fixed-bottom d-lg-none">
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="offcanvas" role="button" aria-controls="offcanvasNavbar"
+                href="#offcanvasNavbar" aria-current="page"><i class="fa-light fa-list"></i></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa-light fa-planet-ringed"></i></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active"><i class="fa-light fa-house"></i></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa-light fa-address-book"></i></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa-light fa-user"></i></a>
+        </li>
+    </ul>
+    <!-- Bottom Mobile Tab nav section end -->
+
+    <!-- Hero section start -->
+    <div class="hero-section">
+        <div class="container">
+            <div class="hero-section-inner">
+                <div class="row g-5 justify-content-between align-items-center">
+                    <div class="col-lg-6 order-2 order-lg-1">
+                        <div class="hero-content">
+                            <h1 class="hero-title">
+                                <span class="highlight">Live chat</span> any time, any place with talkwave
+                            </h1>
+                            <p class="hero-description">This title highlights the app's potential to transform how
+                                people
+                                communicate and collaborate, emphasizing its core features and the positive outcomes
+                                users
+                                can expect.
+                            </p>
+                            <div class="cmn-list mt-20">
+                                <div class="item">
+                                    <div class="icon-box"><i class="fa-regular fa-check"></i></div>
+                                    <div class="text-box">No setup fee</div>
+                                </div>
+                                <div class="item">
+                                    <div class="icon-box"><i class="fa-regular fa-check"></i></div>
+                                    <div class="text-box">Customer service 24/7</div>
+                                </div>
+                                <div class="item">
+                                    <div class="icon-box"><i class="fa-regular fa-check"></i></div>
+                                    <div class="text-box">No credit card required</div>
+                                </div>
+                                <div class="item">
+                                    <div class="icon-box"><i class="fa-regular fa-check"></i></div>
+                                    <div class="text-box">Cancel any time</div>
+                                </div>
+                            </div>
+                            <div class="btn-area mt-20">
+                                <a href="" class="cmn-btn">start chating now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mx-auto order-1 order-lg-2">
+                        <div class="hero-thumbs ms-auto">
+                            <img src="assets/img/hero/heroBanneer-img-livechat-1.jpg.webp" alt="">
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- <div class="shape"></div> -->
+    </div>
+    <!-- Hero section end -->
+
+    <!-- Feature section start -->
+    <section class="feature-section">
+        <div class="container">
+            <div class="row">
+                <div class="section-header text-center">
+                    <h2 class="section-title mx-auto"><span class="highlight">Features</span> for a better experience
+                    </h2>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 cmn-box-item">
+                    <div class="cmn-box">
+                        <div class="icon-area"><i class="fa-sharp fa-solid fa-video"></i></div>
+                        <div class="content-area">
+                            <h5>Video messaging</h5>
+                            <p>This software is very easy for you to manage. You can use it as you wish.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 cmn-box-item">
+                    <div class="cmn-box">
+                        <div class="icon-area"><i class="fa-solid fa-clock"></i></div>
+                        <div class="content-area">
+                            <h5>Save your time</h5>
+                            <p>This software is very easy for you to manage. You can use it as you wish.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 cmn-box-item">
+                    <div class="cmn-box">
+                        <div class="icon-area"><i class="fa-sharp fa-solid fa-shield-check"></i></div>
+                        <div class="content-area">
+                            <h5>Keep safe & private</h5>
+                            <p>This software is very easy for you to manage. You can use it as you wish.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Feature section end -->
+
+    <!-- About section start -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-section-inner">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 order-2 order-lg-1">
+                        <div class="about-content">
+                            <div class="section-subtitle">About us</div>
+                            <h2 class="section-title">What is talkwave software?</h2>
+                            <p>
+                                At TalkWave, we believe in the power of communication to transform the way people
+                                connect
+                                and collaborate. Our mission is to provide a seamless and intuitive platform that
+                                facilitates conversations, making communication effortless, whether you're engaging with
+                                customers, teammates, or friends.
+                            </p>
+                            <br>
+                            <div class="cmn-list">
+                                <div class="item">
+                                    <div class="icon-box">
+                                        <i class="fa-regular fa-check"></i>
+                                    </div>
+                                    <div class="text-box">
+                                        Increased customer retention rates and customer engagement
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="icon-box">
+                                        <i class="fa-regular fa-check"></i>
+                                    </div>
+                                    <div class="text-box">
+                                        Branding customization options and powerful automation
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn-area mt-30">
+                                <button type="button" class="cmn-btn">contact us</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-6 order-1 order-lg-1">
+                        <div class="about-video-box">
+                            <video autoplay loop muted
+                                src="https://www.liveagent.com/wp/urlslab-download/69571e27ce088b0c23ee0db0bd8eaeab/LiveAgent_LiveChat.mp4"></video>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About section end -->
+
+    <!-- Chat capabilities section start -->
+    <section class="chat-capabilities-section">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6">
+                    <div class="img-box">
+                        <img src="./assets/img/chat-capabilities/chat_capabilities-892x1024.png" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="text-box">
+                        <div class="section-subtitle">
+                            Chat capabilities
+                        </div>
+                        <h2 class="section-title">What kind of live chat software does
+                            talkwave offer? </h2>
+                        <p class="mb-0">LiveAgent offers a state-of-the-art chat tool. It comes with premium features
+                            to
+                            help
+                            customer support teams provide a great chat experience. Key features include smart chat
+                            routing, proactive chat invitations, visitor tracking, and more. LiveAgent’s multilingual
+                            chat widget is one of the fastest on the market.</p>
+                        <h5 class="mt-20">Chat support software benefits</h5>
+                        <div class="cmn-list mt-20">
+                            <div class="item">
+                                <div class="icon-box"><i class="fa-regular fa-check"></i></div>
+                                <div class="text-box">Reliable and fast chat with a range of features</div>
+                            </div>
+                            <div class="item">
+                                <div class="icon-box"><i class="fa-regular fa-check"></i></div>
+                                <div class="text-box">Access to an unlimited chat history and ticket history</div>
+                            </div>
+                            <div class="item">
+                                <div class="icon-box"><i class="fa-regular fa-check"></i></div>
+                                <div class="text-box">Chat analytics options and tracking features</div>
+                            </div>
+                            <div class="item">
+                                <div class="icon-box"><i class="fa-regular fa-check"></i></div>
+                                <div class="text-box">Proactive chat invitations with custom design options</div>
+                            </div>
+                        </div>
+                        <a href="" class="cmn-btn mt-30">Live chat features overview</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Chat capabilities section end -->
+
+
+    <!-- Customer satisfaction section start -->
+    <section class="customer-satisfaction">
+        <div class="container">
+            <div class="support-team-view">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-5">
+                        <div class="text-box">
+                            <div class="section-subtitle">
+                                Let's chat
+                            </div>
+                            <h2 class="section-title">Empower your <span class="highlight">support
+                                    team</span> with the
+                                right live chat software</h2>
+                            <p class="mb-0">Get an amazing user experience for every chat agent and
+                                provide a great
+                                experience in customer conversations. Our advanced features can help
+                                customer support agents
+                                handle hundreds of conversations every day. Have a look at what your
+                                help desk agents get in
+                                a single platform.</p>
+                            <h5 class="mt-20">Improve agent productivity with:</h5>
+                            <div class="cmn-list mt-20">
+                                <div class="item">
+                                    <div class="icon-box"><i class="fa-regular fa-check"></i></div>
+                                    <div class="text-box">A dedicated and reliable chat solution</div>
+                                </div>
+                                <div class="item">
+                                    <div class="icon-box"><i class="fa-regular fa-check"></i></div>
+                                    <div class="text-box">Key features that support you</div>
+                                </div>
+                                <div class="item">
+                                    <div class="icon-box"><i class="fa-regular fa-check"></i></div>
+                                    <div class="text-box">Dozens of integrations</div>
+                                </div>
+                            </div>
+                            <a href="" class="cmn-btn mt-30">Start trial for FREE</a>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="switcher">
+                            <button type="button" class="support-btn">Support team view</button>
+                            <div>
+                                <input type="checkbox" class="support-switch" id="switch1" />
+                                <label for="switch1">Toggle</label>
+                            </div>
+                            <button type="button" class="customer-btn">Customer view</button>
+                        </div>
+                        <div class="img-box mt-20">
+                            <img src="./assets/img/customer-satisfaction/support_team_view.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="customer-view d-none">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-5">
+                        <div class="text-box">
+                            <div class="section-subtitle">
+                                Let's chat
+                            </div>
+                            <h2 class="section-title">Live chat software for better <span
+                                    class="highlight">customer</span>
+                                satisfaction</h2>
+                            <p class="mb-0">Improve your website and start conversations with visitors
+                                thanks to modern messaging software. Increase customer loyalty with fast
+                                response to chat requests thanks to a powerful tool. Take a look at what
+                                your customers and customer service teams get with LiveAgent.</p>
+                            <h5 class="mt-20">Refine customer journey with:</h5>
+                            <div class="cmn-list mt-20">
+                                <div class="item">
+                                    <div class="icon-box"><i class="fa-regular fa-check"></i></div>
+                                    <div class="text-box">Reliable and fast chat services</div>
+                                </div>
+                                <div class="item">
+                                    <div class="icon-box"><i class="fa-regular fa-check"></i></div>
+                                    <div class="text-box">Increased response time</div>
+                                </div>
+                                <div class="item">
+                                    <div class="icon-box"><i class="fa-regular fa-check"></i></div>
+                                    <div class="text-box">Faster customer query resolution</div>
+                                </div>
+                            </div>
+                            <a href="" class="cmn-btn mt-30">Start trial for FREE</a>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="switcher">
+                            <button type="button" class="support-btn">Support team view</button>
+                            <div>
+                                <input type="checkbox" class="support-switch" id="switch2" />
+                                <label for="switch2">Toggle</label>
+                            </div>
+                            <button type="button" class="customer-btn">Customer view</button>
+                        </div>
+
+                        <div class="img-box">
+                            <img src="./assets/img/customer-satisfaction/customer_view.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- Customer satisfaction section end -->
+
+    <!-- widget view section start -->
+    <section class="widget-view-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-header text-center">
+                        <h2 class="section-title mx-auto">Talkwave goes beyond ordinary live chat software</h2>
+                        <p class="cmn-para-text mx-auto">Talkwave is much more than a simple live chat provider.
+                            Discover our
+                            customer service platform that can handle every important communication channel. Learn more
+                            about essential features and see how they work.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <!-- Cmn tabs start -->
+                    <div class="cmn-tabs2 mb-50">
+                        <ul class="nav nav-pills gap-2 justify-content-center" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="Choose-a-chat-button-tab" data-bs-toggle="pill"
+                                    data-bs-target="#Choose-a-chat-button" type="button" role="tab"
+                                    aria-controls="Choose-a-chat-button" aria-selected="false">
+                                    Choose a chat button
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="Customize-chat-window-tab" data-bs-toggle="pill"
+                                    data-bs-target="#Customize-chat-window" type="button" role="tab"
+                                    aria-controls="Customize-chat-window" aria-selected="false">
+                                    Customize chat window
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="Integrate-to-website-tab" data-bs-toggle="pill"
+                                    data-bs-target="#Integrate-to-website" type="button" role="tab"
+                                    aria-controls="Integrate-to-website" aria-selected="false">
+                                    Integrate to website
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="Answer-chats-tab" data-bs-toggle="pill"
+                                    data-bs-target="#Answer-chats" type="button" role="tab" aria-controls="Answer-chats"
+                                    aria-selected="false">
+                                    Answer chats
+                                </button>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <!-- Cmn tabs end -->
+
+                    <!-- Cmn tab content start -->
+                    <div class="cmn-tab-content">
+                        <div class="tab-content" id="pills-tabContent">
+
+                            <div class="tab-pane fade show active" id="Choose-a-chat-button" role="tabpanel"
+                                aria-labelledby="Choose-a-chat-button-tab" tabindex="0">
+                                <div class="img-box">
+                                    <img src="./assets/img/widget-view/01_chat_btn_gallery-scaled.png" alt="">
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="Customize-chat-window" role="tabpanel"
+                                aria-labelledby="Customize-chat-window-tab" tabindex="0">
+                                <div class="img-box">
+                                    <img src="./assets/img/widget-view/02_design_customization-scaled.png" alt="">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="Integrate-to-website" role="tabpanel"
+                                aria-labelledby="Integrate-to-website-tab" tabindex="0">
+                                <div class="img-box">
+                                    <img src="./assets/img/widget-view/03_website_integration-scaled.png" alt="">
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="Answer-chats" role="tabpanel"
+                                aria-labelledby="Answer-chats-tab" tabindex="0">
+                                <div class="img-box">
+                                    <img src="./assets/img/widget-view/04_chat_settings-scaled.png" alt="">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Cmn tab content end -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- widget view section end -->
+
+    <!-- Automatic message section start -->
+    <section class="automatic-message-section">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6">
+                    <div class="text-box">
+                        <div class="section-subtitle">
+                            Automatic messages
+                        </div>
+                        <h2 class="section-title">Proactive chat invitations</h2>
+                        <p class="mb-0">Catch customers’ attention with proactive messages that invite website browsers
+                            to chat with a customer care agent. Customize the messages and create a personalized
+                            experience ideal for the purpose of your website. Proactive chat invitations are a powerful
+                            feature that can turn website visitors into paying customers.</h5>
+                        <div class="cmn-list mt-20">
+                            <div class="item">
+                                <div class="icon-box"><i class="fa-regular fa-check"></i></div>
+                                <div class="text-box">Invite customers to chat with automatic messages</div>
+                            </div>
+                            <div class="item">
+                                <div class="icon-box"><i class="fa-regular fa-check"></i></div>
+                                <div class="text-box">Turn website visitors into customers with chat</div>
+                            </div>
+                        </div>
+                        <a href="" class="cmn-btn4 mt-30"><span class="text">Live chat features overview</span> <i
+                                class="fa-regular fa-arrow-right-long"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="img-box">
+                        <img src="./assets/img/automatic-message/proactive_chat_invitations-1-1024x888.jpg.webp" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Automatic message section end -->
+
+    <!-- Visitor tracking section start -->
+    <section class="visitor-tracking-section">
+        <div class="container">
+            <div class="row g-lg-5 align-items-center">
+                <div class="col-md-6">
+                    <div class="img-box">
+                        <img src="./assets/img/visitor-tracking/Mockup-Website-monitoring-chat-overview.png.webp"
+                            alt="">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="text-box">
+                        <div class="section-subtitle">
+                            Visitor tracking
+                        </div>
+                        <h2 class="section-title">Website monitoring</h2>
+                        <p class="mb-0">Keep track of website visitors to see where they spend their time. Chat overview
+                            can show you a number of website visitors, active agents and each ongoing chat. Use the
+                            website monitoring to determine favorite URLs. Send a chat message to potential customers if
+                            you want to help them on their journey.</h5>
+                        <div class="cmn-list mt-20">
+                            <div class="item">
+                                <div class="icon-box"><i class="fa-regular fa-check"></i></div>
+                                <div class="text-box">Track all website visitors and ongoing chats</div>
+                            </div>
+                            <div class="item">
+                                <div class="icon-box"><i class="fa-regular fa-check"></i></div>
+                                <div class="text-box">Determine favorite pages and interact with visitors</div>
+                            </div>
+                        </div>
+                        <a href="" class="cmn-btn4 mt-30"><span class="text">Learn more about website visitor
+                                tracking</span> <i class="fa-regular fa-arrow-right-long"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Visitor tracking section end -->
+
+    <!-- Message sneak peeks section start -->
+    <section class="message-sneak-peeks-section">
+        <div class="container">
+            <div class="row g-lg-5 align-items-center">
+
+                <div class="col-md-6">
+                    <div class="text-box">
+                        <div class="section-subtitle">
+                            Message sneak-peeks
+                        </div>
+                        <h2 class="section-title">Real-time typing view​</h2>
+                        <p class="mb-0">Get your answers ready before the customer sends you a message. Real time typing
+                            view can show what your customers are typing before they hit the send button. Use this
+                            powerful feature to prepare your answers faster, or to do a quick research about topics and
+                            customers. Provide customer support with unmatched speed.</h5>
+                        <div class="cmn-list mt-20">
+                            <div class="item">
+                                <div class="icon-box"><i class="fa-regular fa-check"></i></div>
+                                <div class="text-box">Preview customer messages before they are sent</div>
+                            </div>
+                            <div class="item">
+                                <div class="icon-box"><i class="fa-regular fa-check"></i></div>
+                                <div class="text-box">Prepare your answers faster and decrease resolution times</div>
+                            </div>
+                        </div>
+                        <a href="" class="cmn-btn4 mt-30"><span class="text">Learn more about real-time typing
+                                view</span> <i class="fa-regular fa-arrow-right-long"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="img-box">
+                        <img src="./assets/img/message-sneak-peeks/mockup-Real-time-typing.png.webp" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Message sneak peeks section end -->
+
+    <!-- Language option section start -->
+    <section class="language-option-section">
+        <div class="container">
+            <div class="row g-lg-5 align-items-center">
+                <div class="col-md-6">
+                    <div class="img-box">
+                        <img src="./assets/img/language-option/multilingual_chat_widget-1024x647.jpg.webp" alt="">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="text-box">
+                        <div class="section-subtitle">
+                            Language options
+                        </div>
+                        <h2 class="section-title">Multilingual chat widget</h2>
+                        <p class="mb-0">LiveAgent can speak your language, and the language of your customers. Take a
+                            pick from over 40 languages to help you provide support in various countries. Customize your
+                            chat windows and select their primary language. You can set up each chat widget with
+                            different language options if you’re providing support in multiple areas.</h5>
+                        <div class="cmn-list mt-20">
+                            <div class="item">
+                                <div class="icon-box"><i class="fa-regular fa-check"></i></div>
+                                <div class="text-box">Choose from over 40 language options for chat windows</div>
+                            </div>
+                            <div class="item">
+                                <div class="icon-box"><i class="fa-regular fa-check"></i></div>
+                                <div class="text-box">Create chat widgets in different languages for different purposes
+                                </div>
+                            </div>
+                        </div>
+                        <a href="" class="cmn-btn4 mt-30"><span class="text">Learn more about multilingual chat
+                                widget</span> <i class="fa-regular fa-arrow-right-long"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Language option section end -->
+
+    <!-- Flexible chat section start -->
+    <section class="flexible-chat-section">
+        <div class="container-fluid ps-0">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6">
+                    <div class="left-side">
+                        <div class="text-box">
+                            <h2>
+                                Benefits of live chat software
+                                <br>
+                                and how to get started​
+                            </h2>
+                            <p class="mb-0">00:00/05:51</p>
+                        </div>
+                        <a data-fancybox href="https://www.youtube.com/watch?v=4whbcUpfoN4" class="video-play-btn"><i
+                                class="fa-solid fa-play"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 pe-sm-5">
+                    <div class="right-side">
+                        <div class="section-subtitle">Flexible chat</div>
+                        <h2 class="section-title">Integrate our chat feature with ease</h2>
+                        <p class="mb-0 ">Live chat software for website includes a live chat widget that you can
+                            customize
+                            and place on your website with a few lines of generated code. Chat widget customization
+                            settings
+                            allow you to change its apperance, set up custom branding or create a pre-chat form for
+                            gathering contact details. Spruce up your site with live chat for WordPress. Customers can
+                            click
+                            on the widget when browsing a website, and connect with a customer support agent. Chat agent
+                            can
+                            also reply from the mobile app available for Android and iOS. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Flexible chat section end -->
+
+    <!-- Statistics section start -->
+    <section class="statistics-section">
+        <div class="container">
+            <div class="row">
+                <h2 class="section-title mx-auto text-center">How can live chat software for website help
+                    your business?</h2>
+                <p class="cmn-para-text mx-auto text-center">Chat conversations can help your contact center improve
+                    your sales process and
+                    empower
+                    your online businesses</p>
+
+            </div>
+            <!-- Cmn tabs start -->
+            <div class="cmn-tabs mt-20 mb-30">
+                <ul class="nav nav-pills gap-2 justify-content-center" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="Cost-effectiveness-tab" data-bs-toggle="pill"
+                            data-bs-target="#Cost-effectiveness" type="button" role="tab"
+                            aria-controls="Cost-effectiveness" aria-selected="false">
+                            Cost effectiveness
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="Enhanced-productivity-tab" data-bs-toggle="pill"
+                            data-bs-target="#Enhanced-productivity" type="button" role="tab"
+                            aria-controls="Enhanced-productivity" aria-selected="false">
+                            Enhanced productivity
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="Enhanced-service-quality-tab" data-bs-toggle="pill"
+                            data-bs-target="#Enhanced-service-quality" type="button" role="tab"
+                            aria-controls="Enhanced-service-quality" aria-selected="false">
+                            Enhanced service quality
+                        </button>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- Cmn tabs end -->
+
+            <!-- Cmn tab content start -->
+            <div class="cmn-tab-content">
+                <div class="tab-content" id="pills-tabContent">
+
+                    <div class="tab-pane fade show active" id="Cost-effectiveness" role="tabpanel"
+                        aria-labelledby="Cost-effectiveness-tab" tabindex="0">
+                        <div class="row ">
+                            <div class="col-md-6">
+                                <div class="section-subtitle">Save more</div>
+                                <h2 class="section-title">Save money with live chat conversations</h2>
+                                <p class="mb-0">The fastest chat widget from LiveAgent can help you solve issues
+                                    reliably and quickly. Save on support prices for agent per month and solve larger
+                                    chat volume in a shorter period of time. </p>
+                                <div class="cmn-list mt-20">
+                                    <div class="item">
+                                        <div class="icon-box"><i class="fa-regular fa-check"></i></div>
+                                        <div class="text-box">Choose from over 40 language options for chat windows
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="icon-box"><i class="fa-regular fa-check"></i></div>
+                                        <div class="text-box">Create chat widgets in different languages for different
+                                            purposes
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="" class="cmn-btn4 mt-30"><span class="text">Find more statistics</span> <i
+                                        class="fa-regular fa-arrow-right-long"></i></a>
+
+                            </div>
+                            <div class="col-md-6"></div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="Enhanced-productivity" role="tabpanel"
+                        aria-labelledby="Enhanced-productivity-tab" tabindex="0">
+                        <div class="row ">
+                            <div class="col-md-6">
+                                <div class="section-subtitle">Earn more</div>
+                                <h2 class="section-title">Better conversion rates and earnings</h2>
+                                <p class="mb-0">Help your customers with purchasing decisions and recommend better
+                                    products. Turn more website visitors into paying customers. Increase your
+                                    conversions with a simple chat window on your website.</p>
+                                <div class="cmn-list mt-20">
+                                    <div class="item">
+                                        <div class="icon-box"><i class="fa-regular fa-check"></i></div>
+                                        <div class="text-box">Empower your sales team with online chat and increase
+                                            sales
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="icon-box"><i class="fa-regular fa-check"></i></div>
+                                        <div class="text-box">Help customers with buying decisions and provide instant
+                                            responses
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="" class="cmn-btn4 mt-30"><span class="text">Find more statistics</span> <i
+                                        class="fa-regular fa-arrow-right-long"></i></a>
+
+                            </div>
+                            <div class="col-md-6"></div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="Enhanced-service-quality" role="tabpanel"
+                        aria-labelledby="Enhanced-service-quality-tab" tabindex="0">
+                        <div class="row ">
+                            <div class="col-md-6">
+                                <div class="section-subtitle">Satisfy customers</div>
+                                <h2 class="section-title">Better service for new and current customers</h2>
+                                <p class="mb-0">Improve customer loyalty and use the fastest chat widget to help your
+                                    customers. Decrease cart abandonment with helpful features and stay available for
+                                    website viewers anytime they’re browsing. </p>
+                                <div class="cmn-list mt-20">
+                                    <div class="item">
+                                        <div class="icon-box"><i class="fa-regular fa-check"></i></div>
+                                        <div class="text-box">Improve overall customer satisfaction and happiness
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="icon-box"><i class="fa-regular fa-check"></i></div>
+                                        <div class="text-box">Decrease cart abandonment and turn visitors into customers
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="" class="cmn-btn4 mt-30"><span class="text">Find more statistics</span> <i
+                                        class="fa-regular fa-arrow-right-long"></i></a>
+
+                            </div>
+                            <div class="col-md-6"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Cmn tab content end -->
+        </div>
+    </section>
+    <!-- Statistics section end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Why Choose us section start -->
+    <!-- <section class="why-choose-us-section">
+        <div class="container">
+            <div class="row">
+                <div class="section-header text-center">
+                    <h2 class="section-title mx-auto"> Why Choose TalkWave Elevate <div class="text-underline">Your
+                            Communication </div>Experience </h2>
+                    <p class="cmn-para-text mx-auto">At TalkWave, we understand that the choice of a communication
+                        platform is a
+                        crucial decision.
+                        Here are four compelling reasons why users trust us:</p>
+                </div>
+            </div>
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6">
+                    <div class="why-choose-us-thumbs">
+                        <img src="assets/img/why-choose-us/why-choose-us.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="why-choose-us-content">
+                        <div class="row g-0">
+                            <div class="col-md-6 cmn-box2-item">
+                                <div class="cmn-box2">
+                                    <div class="icon-box">
+                                        <i class="fa-regular fa-user"></i>
+                                    </div>
+                                    <div class="content-box">
+                                        <h5>Seamless User Experience:</h5>
+                                        <span>Experience communication like never before with our intuitive and
+                                            user-friendly interface.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 cmn-box2-item">
+                                <div class="cmn-box2">
+                                    <div class="icon-box">
+                                        <i class="fa-regular fa-shield"></i>
+                                    </div>
+                                    <div class="content-box">
+                                        <h5>Reliable and Secure:</h5>
+                                        <span>Experience communication like never before with our intuitive and
+                                            user-friendly interface.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 cmn-box2-item">
+                                <div class="cmn-box2">
+                                    <div class="icon-box">
+                                        <i class="fa-regular fa-seal-question"></i>
+                                    </div>
+                                    <div class="content-box">
+                                        <h5>Innovative Features:</h5>
+                                        <span>Experience communication like never before with our intuitive and
+                                            user-friendly interface.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 cmn-box2-item">
+                                <div class="cmn-box2">
+                                    <div class="icon-box">
+                                        <i class="fa-regular fa-headset"></i>
+                                    </div>
+                                    <div class="content-box">
+                                        <h5>Responsive Support:</h5>
+                                        <span>Experience communication like never before with our intuitive and
+                                            user-friendly interface.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- Why Choose us section end -->
+
+    <!-- How it works section start -->
+    <!-- <section class="how-it-works-section">
+        <div class="container">
+            <div class="row">
+                <div class="section-header text-center">
+                    <h2 class="section-title mx-auto"> How <div class="text-underline">TalkWave Works</div> Your
+                        Communication</h2>
+                </div>
+            </div>
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 order-2 order-lg-1">
+                    <div class="how-it-works-content">
+                        <div class="row g-0">
+                            <div class="col-md-6 cmn-box2-item">
+                                <div class="cmn-box2">
+                                    <div class="icon-box">
+                                        <i class="fa-regular fa-user"></i>
+                                    </div>
+                                    <div class="content-box">
+                                        <h5>Sign Up for Free:</h5>
+                                        <span>Embark on your TalkWave journey by signing up for a free account. Quick
+                                            and hassle-free, the registration process sets the stage for your enhanced
+                                            communication experience.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 cmn-box2-item">
+                                <div class="cmn-box2">
+                                    <div class="icon-box">
+                                        <i class="fa-regular fa-screwdriver-wrench"></i>
+                                    </div>
+                                    <div class="content-box">
+                                        <h5>Customize Your Space:</h5>
+                                        <span>Tailor TalkWave to your preferences. Personalize your profile, fine-tune
+                                            notification settings, and create a space that reflects your unique
+                                            communication style.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 cmn-box2-item">
+                                <div class="cmn-box2">
+                                    <div class="icon-box">
+                                        <i class="fa-regular fa-chart-network"></i>
+                                    </div>
+                                    <div class="content-box">
+                                        <h5> Connect and Collaborate:</h5>
+                                        <span>Seamlessly connect with your team, clients, or friends. Initiate
+                                            one-on-one conversations or foster group collaboration. Share ideas, files,
+                                            and updates in real-time for efficient teamwork.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 cmn-box2-item">
+                                <div class="cmn-box2">
+                                    <div class="icon-box">
+                                        <i class="far fa-level-up-alt"></i>
+                                    </div>
+                                    <div class="content-box">
+                                        <h5>Explore Advanced Features:</h5>
+                                        <span>Dive into advanced features that elevate your communication game. From
+                                            file sharing to screen sharing and integrated task management, TalkWave
+                                            offers a suite of tools to enhance your interactions.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2">
+
+                    <div class="how-it-works-thumbs">
+                        <img src="assets/img/how-it-works/how-it-works.jpeg" alt="">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section> -->
+    <!-- How it works section end -->
+
+    <!-- Faq section start -->
+    <!-- <section class="faq-section">
+        <div class="container">
+            <div class="row gy-4 gy-md-5 gx-sm-5 align-items-center">
+                <div class="col-md-6">
+                    <div class="left-side">
+                        <h2 class="section-title">
+                            <div class="text-underline">any questions? </div><br> we have
+                            answers!
+                        </h2>
+                        <p class="cmn-para-text mx-auto mt-20">TalkWave is a cutting-edge communication platform
+                            designed to streamline conversations for individuals and businesses. It offers a range of
+                            features to enhance collaboration and connectivity.</p>
+                        <div class="btn-area mt-30">
+                            <a href="" class="cmn-btn">contact us</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="faq-content">
+                        <div class="accordion" id="accordionExample2">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headinOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        What is TalkWave?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show"
+                                    aria-labelledby="headinOne" data-bs-parent="#accordionExample2">
+                                    <div class="accordion-body">
+                                        <div class="table-responsive">
+                                            <p>TalkWave is a cutting-edge communication platform designed to streamline
+                                                conversations for individuals and businesses. It offers a range of
+                                                features to enhance collaboration and connectivity.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headinTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                                        How do I sign up for TalkWave?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headinTwo"
+                                    data-bs-parent="#accordionExample2">
+                                    <div class="accordion-body">
+                                        <div class="table-responsive">
+                                            <p>Signing up for TalkWave is easy! Visit our [Sign Up] page, fill in the
+                                                required information, and create your account. It's quick, secure, and
+                                                free.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headinThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseThree" aria-expanded="true"
+                                        aria-controls="collapseThree">
+                                        What platforms does TalkWave support?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="headinThree" data-bs-parent="#accordionExample2">
+                                    <div class="accordion-body">
+                                        <div class="table-responsive">
+                                            <p>TalkWave is accessible on multiple platforms, including web browsers,
+                                                iOS, and Android devices. Enjoy seamless communication across your
+                                                preferred devices.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headinFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFour" aria-expanded="true"
+                                        aria-controls="collapseFour">
+                                        Is my data secure on TalkWave?
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headinFour"
+                                    data-bs-parent="#accordionExample2">
+                                    <div class="accordion-body">
+                                        <div class="table-responsive">
+                                            <p>Yes, your privacy and data security are our top priorities. TalkWave
+                                                employs robust encryption and security measures to ensure your
+                                                information is protected.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFive">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseFive" aria-expanded="false"
+                                        aria-controls="collapseFive">
+                                        Can I use TalkWave for business purposes?
+                                    </button>
+                                </h2>
+                                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                                    data-bs-parent="#accordionExample2">
+                                    <div class="accordion-body">
+                                        <p>Absolutely! TalkWave is designed for both personal and business use. It's a
+                                            versatile platform suitable for team collaboration, customer support, and
+                                            more.</p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingSix">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                        Are there premium features available?
+                                    </button>
+                                </h2>
+                                <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                                    data-bs-parent="#accordionExample2">
+                                    <div class="accordion-body">
+                                        <p>Yes, TalkWave offers premium features to enhance your communication
+                                            experience. Explore advanced tools like file sharing, screen sharing, and
+                                            more with our premium plans.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section> -->
+    <!-- Faq section end -->
+
+    <!-- Testimonial section start -->
+
+    <!-- <section class="testimonial-section">
+        <div class="container">
+            <div class="row">
+                <div class="section-header mb-50 text-center">
+                    <h2 class="">what our <div class="text-underline">Clients Say</div>
+                    </h2>
+                    <p class="cmn-para-text m-auto">Help agencies to define their new business objectives and then
+                        create professional software. Lorem ipsum, dolor sit amet</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="owl-carousel owl-theme testimonial-carousel">
+                    <div class="item">
+                        <div class="testimonial-box">
+                            <div class="testimonial-header">
+                                <div class="testimonial-title-area">
+                                    <div class="testimonial-thumbs">
+                                        <img src="assets/img/Person/6.jpg" alt="" />
+                                    </div>
+                                    <div class="testimonial-title">
+                                        <h5 class="mb-0">Crol Mickey</h5>
+                                        <p>Sydney, Australia</p>
+                                    </div>
+                                </div>
+                                <ul class="ratings">
+                                    <li>
+                                        <i class="active fa-solid fa-star"></i>
+                                        <i class="active fa-solid fa-star"></i>
+                                        <i class="active fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="quote-area">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo reiciendis dolor totam
+                                    officiis! Dolore veniam exercitationem optio eveniet expedita esse.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimonial-box">
+                            <div class="testimonial-header">
+                                <div class="testimonial-title-area">
+                                    <div class="testimonial-thumbs">
+                                        <img src="assets/img/Person/7.jpg" alt="" />
+                                    </div>
+                                    <div class="testimonial-title">
+                                        <h5 class="mb-0">Jim Morison</h5>
+                                        <p>London, UK</p>
+                                    </div>
+                                </div>
+                                <ul class="ratings">
+                                    <li>
+                                        <i class="active fa-solid fa-star"></i>
+                                        <i class="active fa-solid fa-star"></i>
+                                        <i class="active fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="quote-area">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo reiciendis dolor totam
+                                    officiis! Dolore veniam exercitationem optio eveniet expedita esse.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimonial-box">
+                            <div class="testimonial-header">
+                                <div class="testimonial-title-area">
+                                    <div class="testimonial-thumbs">
+                                        <img src="assets/img/Person/8.jpg" alt="" />
+                                    </div>
+                                    <div class="testimonial-title">
+                                        <h5 class="mb-0">Tom Haris</h5>
+                                        <p>New York, USA</p>
+                                    </div>
+                                </div>
+                                <ul class="ratings">
+                                    <li>
+                                        <i class="active fa-solid fa-star"></i>
+                                        <i class="active fa-solid fa-star"></i>
+                                        <i class="active fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="quote-area">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo reiciendis dolor totam
+                                    officiis! Dolore veniam exercitationem optio eveniet expedita esse.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimonial-box">
+                            <div class="testimonial-header">
+                                <div class="testimonial-title-area">
+                                    <div class="testimonial-thumbs">
+                                        <img src="assets/img/Person/9.jpg" alt="" />
+                                    </div>
+                                    <div class="testimonial-title">
+                                        <h5 clasi="mb-0">Alex Cruis</h5>
+                                        <p>Dublin, Ireland</p>
+                                    </div>
+                                </div>
+                                <ul class="ratings">
+                                    <li>
+                                        <i class="active fa-solid fa-star"></i>
+                                        <i class="active fa-solid fa-star"></i>
+                                        <i class="active fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="quote-area">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo reiciendis dolor totam
+                                    officiis! Dolore veniam exercitationem optio eveniet expedita esse.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="testimonial-box">
+                            <div class="testimonial-header">
+                                <div class="testimonial-title-area">
+                                    <div class="testimonial-thumbs">
+                                        <img src="assets/img/Person/10.jpg" alt="" />
+                                    </div>
+                                    <div class="testimonial-title">
+                                        <h5 clasi="mb-0">Mitsubishi</h5>
+                                        <p>Tokyo, Japan</p>
+                                    </div>
+                                </div>
+                                <ul class="ratings">
+                                    <li>
+                                        <i class="active fa-solid fa-star"></i>
+                                        <i class="active fa-solid fa-star"></i>
+                                        <i class="active fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="quote-area">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo reiciendis dolor totam
+                                    officiis! Dolore veniam exercitationem optio eveniet expedita esse.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- Testimonial section end -->
+
+    <!-- Blog Section start -->
+    <!-- <section class="blog-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-header text-center mb-50">
+                        <h3 class="section-title mx-auto">Insights, Tips, and Stories from the <span div
+                                class="text-underline">TalkWave Community</span> </h3>
+                        <p class="cmn-para-text mx-auto mt-20">Welcome to the TalkWave Blog, your go-to resource for all
+                            things communication, collaboration, and productivity. Discover a wealth of insights, expert
+                            tips, and inspiring stories to help you make the most of your TalkWave experience.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog-box">
+                        <a href="blog-details.html">
+                            <div class="img-box">
+                                <img src="assets/img/blog/1.jpg" alt="">
+                            </div>
+                        </a>
+                        <div class="content-box">
+                            <ul class="meta">
+                                <li class="item">
+                                    <span class="icon"><i class="fa-regular fa-user"></i></span>
+                                    <span>by Admin</span>
+                                </li>
+                                <li class="item">
+                                    <span class="icon"><i class="fa-regular fa-messages"></i></span>
+                                    <span>25</span>
+                                </li>
+                                <li class="item">
+                                    <span class="icon"><i class="fa-regular fa-eye"></i></span>
+                                    <span>2120 Views</span>
+                                </li>
+                            </ul>
+                            <div class=" blog-title">
+                                <h5><a href="blog-details.html">Elevate Your Team Collaboration: Strategies to Boost
+                                        Productivity, Foster Inclusivity, and Create a Collaborative Environment that
+                                        Drives Success</a></h5>
+                            </div>
+                            <div class="para-text">
+                                <p>In today's fast-paced business landscape, effective team collaboration is key to
+                                    success. Dive into our blog to discover expert strategies that go beyond the basics.
+                                </p>
+                            </div>
+
+                            <a href="blog-details.html" class="cmn-btn mt-30 w-100">read more</a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog-box">
+                        <a href="blog-details.html">
+                            <div class="img-box">
+                                <img src="assets/img/blog/2.jpg" alt="">
+                            </div>
+                        </a>
+                        <div class="content-box">
+                            <ul class="meta">
+                                <li class="item">
+                                    <span class="icon"><i class="fa-regular fa-user"></i></span>
+                                    <span>by Admin</span>
+                                </li>
+                                <li class="item">
+                                    <span class="icon"><i class="fa-regular fa-messages"></i></span>
+                                    <span>25</span>
+                                </li>
+                                <li class="item">
+                                    <span class="icon"><i class="fa-regular fa-eye"></i></span>
+                                    <span>2120 Views</span>
+                                </li>
+                            </ul>
+                            <div class=" blog-title">
+                                <h5><a href="blog-details.html">Mastering Remote Work: Navigating the Complexities,
+                                        Embracing the Opportunities, and Discovering the Key Ingredients for a
+                                        Successful and Fulfilling Remote Work Experience</a></h5>
+                            </div>
+                            <div class="para-text">
+                                <p>As remote work becomes the new norm, mastering its intricacies is essential. Our blog
+                                    delves into the challenges and opportunities of remote work. Learn how to create a
+                                    work-from-home environment that promotes productivity
+                                </p>
+                            </div>
+                            <a href="blog-details.html" class="cmn-btn mt-30 w-100">read more</a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="blog-box">
+                        <a href="blog-details.html">
+                            <div class="img-box">
+                                <img src="assets/img/blog/3.jpg" alt="">
+                            </div>
+                        </a>
+                        <div class="content-box">
+                            <ul class="meta">
+                                <li class="item">
+                                    <span class="icon"><i class="fa-regular fa-user"></i></span>
+                                    <span>by Admin</span>
+                                </li>
+                                <li class="item">
+                                    <span class="icon"><i class="fa-regular fa-messages"></i></span>
+                                    <span>25</span>
+                                </li>
+                                <li class="item">
+                                    <span class="icon"><i class="fa-regular fa-eye"></i></span>
+                                    <span>2120 Views</span>
+                                </li>
+                            </ul>
+                            <div class=" blog-title">
+                                <h5><a href="blog-details.html">Tech Talks: Unveiling Advanced Features for Unmatched
+                                        Communication Excellence - Explore the Cutting-Edge Capabilities of TalkWave's
+                                        Premium Plans and Transform Your Communication Dynamics</a></h5>
+                            </div>
+                            <div class="para-text">
+                                <p>Embark on a journey into the technological wonders that power TalkWave's premium
+                                    plans. From advanced collaboration tools to in-depth analytics, our blog guides you
+                                    through the features that set TalkWave apart.
+                                </p>
+                            </div>
+                            <a href="blog-details.html" class="cmn-btn mt-30 w-100">read more</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- Blog Section end -->
+
+    <!-- Newsletter section start -->
+    <!-- <section class="newsletter-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 col-lg-10 mx-auto">
+                    <div class="newsletter-inner">
+                        <div class="row g-4 align-items-center">
+                            <div class="col-md-4 d-none d-md-block">
+                                <div class="thumbs-area">
+                                    <img src="./assets/img/newsletter/Messaging-fun-pana2.png" alt="">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="content-area">
+                                    <h3 class="subscribe-normal-text">Subscribe to our mailing list <br> and stay up to
+                                        date</h3>
+                                    <p class="subscribe-small-text">Lorem ipsum dolor sit amet consectetur, adipisicing
+                                        elit. Illo,
+                                        hic!</p>
+                                    <form class="newsletter-form">
+                                        <input type="text" class="form-control" placeholder="Your email">
+                                        <button type="button" class="subscribe-btn">Subscribe</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- Newsletter section end -->
+
+    <!-- Footer Section start -->
+    <section class="footer-section pb-50">
+        <div class="container">
+            <!-- <div class="row">
+                <div class="call-to-action text-center">
+                    <h3 class="title mx-auto">Ready to grow your business? Start with TalkWave, become faster every
+                        second</h3>
+                    <a href="" class="cmn-btn mt-30">start chating now</a>
+                </div>
+            </div>
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-3 col-md-3 d-flex justify-content-center justify-content-md-start">
+                    <div class="logo">
+                        <a href="">
+                            <img src="./assets/img/logo/logo.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-5">
+                    <div class="footer-widget">
+                        <div class="widget-link-container">
+                            <a href="" class="widget-link">About</a>
+                            <a href="" class="widget-link">Features</a>
+                            <a href="" class="widget-link">blog</a>
+                            <a href="" class="widget-link">FAQ</a>
+                            <a href="" class="widget-link">contact</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="social-area">
+                        <ul class="d-flex justify-content-center justify-content-md-end">
+                            <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                            <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+                            <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-hr"> -->
+            <!-- Copyright-area-start -->
+            <!-- <div class="copyright-area">
+                <div class="row gy-4">
+                    <div class="col-md-6">
+                        <p>Copyright ©2023 <a class="highlight" href="index.html">Email Template</a> All Rights
+                            Reserved
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="copyright-widget">
+                            <li><a href="policy.html" class="copyright-link">Privacy Policy</a></li>
+                            <li><a href="policy.html" class="copyright-link">Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div> -->
+            <!-- Copyright-area-end -->
+        </div>
+    </section>
+    <!-- Footer Section end -->
+
+
+
+
+
+
+
+
+    <!-- Jquery Js link -->
+    <script src="assets/js/jquery-3.6.1.min.js"></script>
+    <!-- <script src="assets/js/jquery-3.7.1.min.js"></script> -->
+
+    <!-- Bootstrap Js link -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Owl carausel Js link -->
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <!-- Swiper Js link -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- Slick slider js link -->
+    <script src="assets/js/slick.min.js"></script>
+    <!-- select2 Js link -->
+    <script src="assets/js/select2.min.js"></script>
+    <!-- Twism map Js link -->
+    <script src="assets/js/jquery.twism.js"></script>
+    <!-- rangeSlider Js link -->
+    <script src="assets/js/ion.rangeSlider.min.js"></script>
+    <!-- fancybox Js link -->
+    <script src="assets/js/fancybox.umd.js"></script>
+
+
+    <!-- Main Js link -->
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        $(document).on('change', '.support-switch', function () {
+            let selector = $(this).attr('id');
+            let selectorVal = $(`#${selector}`).is(':checked');
+
+            if (selectorVal) {
+                $('.support-switch').prop('checked', true);
+            } else {
+                $('.support-switch').prop('checked', false);
+            }
+
+            if (selectorVal) {
+                $('.customer-view').removeClass('d-none');
+                $('.support-team-view').addClass('d-none');
+            } else {
+                $('.support-team-view').removeClass('d-none');
+                $('.customer-view').addClass('d-none');
+            }
+        });
+    </script>
+</body>
+
+</html>

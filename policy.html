@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalkWave</title>
+    <!-- Favicon-link -->
+    <link rel="shortcut icon" href="assets/img/logo/favicon.png" type="image/x-icon">
+
+    <!-- Fontawesome6-Js-link -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <!-- <link rel="stylesheet" href="assets/css/fontawesome.min.css"> -->
+    <!-- Bootstrap5-Css-link -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- Owl-carousel-Css-link -->
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+    <!-- Slick-slider-Css-link -->
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/slick-theme.css">
+    <!-- select2-Css-link -->
+    <link rel="stylesheet" href="assets/css/select2.min.css">
+    <!-- jqvmap map css link -->
+    <link rel="stylesheet" href="assets/css/jqvmap.min.css">
+    <!-- Nice select css link -->
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <!-- rangeSlider Css link -->
+    <link rel="stylesheet" href="assets/css/ion.rangeSlider.min.css">
+    <!-- rangeSlider Css link -->
+    <link rel="stylesheet" href="assets/css/fancybox.css">
+    <!-- intlTelInput -Css link -->
+    <link rel="stylesheet" href="assets/css/intlTelInput.min.css">
+
+
+
+    <!-- Style Css link -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body onload="preloaderFunction()" class="">
+
+    <!-- Preloader section start -->
+    <div id="preloader">
+        <div class="load">
+            <hr />
+            <hr />
+            <hr />
+            <hr />
+        </div>
+    </div>
+    <!-- Preloader section end -->
+
+    <!-- Nav section start -->
+    <nav class="navbar fixed-top navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand logo" href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar">
+                <i class="fa-light fa-list"></i>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbar">
+                <div class="offcanvas-header">
+                    <a class="navbar-brand" href="index.html"><img class="logo" src="assets/img/logo/logo-white.png"
+                            alt=""></a>
+                    <button type="button" class="cmn-btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><i
+                            class="fa-light fa-arrow-right"></i></button>
+                </div>
+                <div class="offcanvas-body align-items-center justify-content-between">
+                    <ul class="navbar-nav m-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pricing.html">pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="features.html">features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="faq.html">FAQ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <div class="language-box">
+                                <i class="fa-light fa-globe"></i>
+                                <select class="form-select" aria-label="Default select example">
+                                    <option selected>Bangla</option>
+                                    <option value="1">English</option>
+                                    <option value="2">Russian</option>
+                                </select>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="nav-right">
+                <ul class="custom-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link login-btn" href="login.html"><i
+                                class="login-icon fa-light fa-right-to-bracket"></i><span
+                                class="d-none d-md-block">Login</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="profile-box">
+                            <div class="profile">
+                                <img src="./assets/img/Person/1.jpg" class="img-fluid" alt="">
+                            </div>
+                            <ul class="user-dropdown">
+                                <li>
+                                    <a href="user-panel.html"> <i class="fal fa-user"></i> View Profile </a>
+                                </li>
+                                <li>
+                                    <a href="support-ticket.html"> <i class="fal fa-user-headset"></i> Support </a>
+                                </li>
+                                <li>
+                                    <a href="edit-profile.html"> <i class="fal fa-user-cog"></i> Account Settings
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href=""> <i class="fal fa-sign-out-alt"></i> Sign Out </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <!-- <li>
+                        <a id="toggle-btn" class="nav-link d-flex toggle-btn">
+                            <i class="fa-regular fa-moon" id="moon"></i>
+                            <i class="fa-regular fa-sun-bright" id="sun"></i>
+                        </a>
+                    </li> -->
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Nav section end -->
+
+    <!-- Bottom Mobile Tab nav section start -->
+    <ul class="nav bottom-nav fixed-bottom d-lg-none">
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="offcanvas" role="button" aria-controls="offcanvasNavbar"
+                href="#offcanvasNavbar" aria-current="page"><i class="fa-light fa-list"></i></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa-light fa-planet-ringed"></i></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active"><i class="fa-light fa-house"></i></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa-light fa-address-book"></i></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa-light fa-user"></i></a>
+        </li>
+    </ul>
+    <!-- Bottom Mobile Tab nav section end -->
+
+    <!-- Banner section start -->
+    <div class="banner-area">
+        <div class="container">
+            <div class="row ">
+                <div class="col">
+                    <div class="breadcrumb-area">
+                        <h3>Policy</h3>
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="home-1.html"><i class="fa-light fa-house"></i> Home</a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">Policy</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Banner section end -->
+
+    <!-- Policy section start -->
+    <section class="policy-section">
+        <div class="container">
+            <div class="row">
+                <div class="policy-section-inner">
+                    <div class="section-header">
+                        <h3 class="section-title">Privacy Policy</h3>
+                        <small>last updated on January 01, 2024</small>
+                    </div>
+                    <p>
+                        At TalkWave, we value your privacy and are committed to protecting your personal information.
+                        This Privacy Policy outlines how we collect, use, disclose, and protect the data you provide
+                        while using our classified ads
+                        platform.
+                    </p>
+
+                    <h5 class="mt-30">Information We Collect</h5>
+                    <div class="policy-list mt-10">
+                        <div class="item">
+                            <span class="icon"><i class="fa-regular fa-circle-check"></i></span>
+                            <span>We may collect personally identifiable information, such as your name, email address,
+                                phone number, and other information you provide when you register, contact us, or use
+                                our services.</span>
+                        </div>
+                        <div class="item">
+                            <span class="icon"><i class="fa-regular fa-circle-check"></i></span>
+                            <span>
+                                We automatically collect information that your browser sends whenever you visit our
+                                website. This may include your IP address, browser type, browser version, the pages you
+                                visit, and the time and date of your
+                                visit.
+                            </span>
+                        </div>
+                        <div class="item">
+                            <span class="icon"><i class="fa-regular fa-circle-check"></i></span>
+                            <span>We use cookies to collect information and improve your experience. You can configure
+                                your browser to block or disable cookies, but this may affect your ability to use our
+                                services.</span>
+                        </div>
+                    </div>
+                    <h5 class="mt-30">How We Use Your Information</h5>
+                    <div class="policy-list mt-10">
+                        <div class="item">
+                            <span class="icon"><i class="fa-regular fa-circle-check"></i></span>
+                            <span>We use your information to provide our services and maintain your account.</span>
+                        </div>
+                        <div class="item">
+                            <span class="icon"><i class="fa-regular fa-circle-check"></i></span>
+                            <span>We use your information to understand how our services are used and make
+                                improvements.</span>
+                        </div>
+                        <div class="item">
+                            <span class="icon"><i class="fa-regular fa-circle-check"></i></span>
+                            <span>We may use your contact information to send you important updates, newsletters, or
+                                respond to your inquiries.</span>
+                        </div>
+                    </div>
+                    <h5 class="mt-30">Data Sharing and Disclosure</h5>
+                    <div class="mt-10">
+                        We may share your information with trusted third parties for purposes such as data analysis,
+                        payment processing, customer support, and other services. We do not sell, rent, or trade your
+                        personal information to third
+                        parties for marketing purposes.
+                    </div>
+                    <h5 class="mt-30">Security</h5>
+                    <div class="mt-10">
+                        We take reasonable measures to protect your personal information from unauthorized access,
+                        disclosure, alteration, or destruction. However, no method of transmission over the Internet or
+                        electronic storage is 100%
+                        secure.
+                    </div>
+                    <h5 class="mt-30">Your Choices</h5>
+                    <div class="mt-10">
+                        You may review, update, or delete your personal information by contacting us. You can opt-out of
+                        receiving marketing communications by following the unsubscribe instructions in emails or
+                        contacting us directly.
+                    </div>
+                    <h5 class="mt-30">Changes to this Privacy Policy</h5>
+                    <div class="mt-10">
+                        We may update our Privacy Policy from time to time. We will notify you of any changes by posting
+                        the new Privacy Policy on this page with an updated effective date.
+                    </div>
+                    <h5 class="mt-30">Contact Us</h5>
+                    <div class="mt-10">
+                        If you have any questions or concerns about this Privacy Policy, please contact us at
+                        user@gmail.com
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="shape"></div>
+        <div class="shape3"></div>
+    </section>
+    <!-- Policy section end -->
+
+
+
+    <!-- Footer Section start -->
+    <section class="footer-section pb-50">
+        <div class="container">
+            <div class="row">
+                <div class="call-to-action text-center">
+                    <h3 class="title mx-auto">Ready to grow your business? Start with TalkWave, become faster every
+                        second</h3>
+                    <a href="" class="cmn-btn mt-30">start chating now</a>
+                </div>
+            </div>
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-3 col-md-3 d-flex justify-content-center justify-content-md-start">
+                    <div class="logo">
+                        <a href="">
+                            <img src="./assets/img/logo/logo.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-5">
+                    <div class="footer-widget">
+                        <div class="widget-link-container">
+                            <a href="" class="widget-link">About</a>
+                            <a href="" class="widget-link">Features</a>
+                            <a href="" class="widget-link">blog</a>
+                            <a href="" class="widget-link">contact</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <div class="social-area">
+                        <ul class="d-flex justify-content-center justify-content-md-end">
+                            <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                            <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+                            <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-hr">
+            <!-- Copyright-area-start -->
+            <div class="copyright-area">
+                <div class="row gy-4">
+                    <div class="col-md-6">
+                        <p>Copyright ©2023 <a class="highlight" href="index.html">Email Template</a> All Rights
+                            Reserved
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="copyright-widget">
+                            <li><a href="policy.html" class="copyright-link">Privacy Policy</a></li>
+                            <li><a href="policy.html" class="copyright-link">Terms & Conditions</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Copyright-area-end -->
+        </div>
+    </section>
+    <!-- Footer Section end -->
+
+
+
+
+
+
+
+
+    <!-- Jquery Js link -->
+    <script src="assets/js/jquery-3.6.1.min.js"></script>
+    <!-- <script src="assets/js/jquery-3.7.1.min.js"></script> -->
+
+    <!-- Bootstrap Js link -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Owl carausel Js link -->
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <!-- Swiper Js link -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <!-- Slick slider js link -->
+    <script src="assets/js/slick.min.js"></script>
+    <!-- select2 Js link -->
+    <script src="assets/js/select2.min.js"></script>
+    <!-- Twism map Js link -->
+    <script src="assets/js/jquery.twism.js"></script>
+    <!-- Nice select Js link -->
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <!-- rangeSlider Js link -->
+    <script src="assets/js/ion.rangeSlider.min.js"></script>
+    <!-- fancybox Js link -->
+    <script src="assets/js/fancybox.umd.js"></script>
+    <!-- intlTelInput Js link -->
+    <script src="assets/js/intlTelInput.min.js"></script>
+
+
+
+
+
+
+
+    <!-- Main Js link -->
+    <script src="assets/js/main.js"></script>
+
+
+</body>
+
+</html>

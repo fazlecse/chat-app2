@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet">
+   <style>
+      .file-upload-list {
+         display: flex;
+         align-items: center;
+         gap: 6px;
+         flex-wrap: wrap;
+         max-height: 100px;
+         overflow-y: auto;
+      }
+
+      .item {
+         width: 80px;
+         height: 80px;
+         border: 1px solid rgba(231, 234, 243, 0.7);
+         text-align: center;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         border-radius: 5px;
+
+      }
+
+      .item img {
+         width: 100%;
+         height: 100%;
+         border-radius: 5px;
+      }
+
+      .file-upload-box {
+         display: none;
+      }
+
+      .file-upload-box.visible {
+         display: block;
+      }
+   </style>
+</head>
+
+<body style="font-family: 'DM Sans', sans-serif;">
+
+   <div id="chat-widget-section" class="chat-widget-section">
+      <button id="chat-widget-button" class="chat-widget-button" style="
+            width: 60px; 
+            height: 60px; 
+            border-radius: 50%; 
+            border: none; 
+            background-color: #ff6500; 
+            position: fixed; 
+            right: 20px; 
+            bottom: 20px; 
+            padding: 0; 
+            cursor: pointer;
+            ">
+         <img src="./assets/img/chat-widget/close.png" alt="Chat Widget" style="width: 25px; height: 25px;" />
+      </button>
+
+
+
+
+      <!-- <div id="message-box" class="message-box" style="
+              position: fixed;
+              right: 10px;
+              bottom: 90px;
+              max-width: 400px;
+              min-width: 320px;
+              background-color: #f8f8fa;
+              border-radius: 5px;
+              width: 100%;
+              z-index: 99999;
+              border: 1px solid rgba(231, 234, 243, 0.7);
+              box-shadow: 0 0.375rem 0.75rem rgba(140, 152, 164, 0.075);
+              font-size: 16px;
+              
+              
+          ">
+         <div class="message-box-header"
+            style="display: flex; justify-content: space-between; align-items: center; gap: 5px; padding: 16px; background-color: #ff6500; border-top-left-radius: 5px; border-top-right-radius: 5px; color: #ffffff;">
+            <div style="display: flex; align-items: center; gap: 5px;">
+               <button type="button" style="
+                     border: none; 
+                     height: 30px; 
+                     width: 30px; 
+                     min-width: 30px; 
+                     border-radius: 3px; 
+                     display: flex;
+                     align-items: center; 
+                     justify-content: center; 
+                     padding: 3px; 
+                     background-color: transparent; 
+                     cursor: pointer;
+                     transition: all 0.3s ease-in-out;
+                     " onmouseover="this.style.backgroundColor = '#ff934d';"
+                  onmouseout="this.style.backgroundColor = 'transparent';">
+                  <img src="./assets/img/chat-widget/angle-left.png" alt="img" style="max-width: 100%; height: auto;" />
+               </button>
+               <div class="profile"
+                  style="display: flex; align-items: center; gap: 10px; line-height: 10px; color: #ffffff; text-transform: capitalize;">
+                  <div class="thumbs-area">
+                     <img src="./assets/img/Person/10.jpg" alt=""
+                        style="border-radius: 10px; width: 35px; height: 35px;" />
+                  </div>
+                  <div class="content-area">
+                     <h6
+                        style="font-size: 16px; font-weight: 500; margin: 0; margin-bottom: 7px; font-family: 'Montserrat', sans-serif;">
+                        Hi there!
+                     </h6>
+                     <small>Customer Care</small>
+                  </div>
+               </div>
+            </div>
+            <div class="custom-dropdown" style="
+               position: relative;">
+               <button id="custom-dropdown-toggle" type="button" style="
+                  border: none; 
+                  height: 30px; 
+                  width: 30px; 
+                  min-width: 30px;
+                  border-radius: 3px; 
+                  background-color: transparent; 
+                  cursor: pointer; 
+                  padding: 3px;
+                  transition: all 0.3s ease-in-out;
+                  " onmouseover="this.style.backgroundColor = '#ff934d';"
+                  onmouseout="this.style.backgroundColor = 'transparent';">
+                  <img src="./assets/img/chat-widget/align-right.png" alt="img"
+                     style="max-width: 100%; height: auto;" />
+               </button>
+               <div id="custom-dropdown-menu" style="
+                  position: absolute;
+                  z-index: 1000;
+                  min-width: 13rem;
+                  background-color: #ffffff;
+                  border-radius: 5px;
+                  overflow: auto;
+                  max-height: 30rem;
+                  inset: 0px 0px auto auto;
+                  top: calc(100% + 5px);
+                  box-shadow: 0 0.375rem 0.75rem rgba(140, 152, 164, 0.075);
+                  padding: 8px;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 5px;
+                  visibility: hidden;
+               ">
+                  <a href="#" class="custom-dropdown-item" style="
+                     display: flex;
+                     align-items: center;
+                     gap: 5px;
+                     text-transform: capitalize;
+                     text-decoration: none;
+                     border-radius: 5px;
+                     padding: 4px 8px;
+                     font-size: 14px;
+                     font-weight: 500;
+                     transition: all 0.3s ease-in-out;
+   
+
+                  " onmousemove="this.style.backgroundColor='#F8F8FA';" onmouseout="this.style.backgroundColor='';">
+                     <img src="./assets/img/chat-widget/user-avatar.png" alt="user-avatar"
+                        style="width: 20px; height: auto;">
+                     change name
+                  </a>
+                  <a href="#" class="custom-dropdown-item" style="
+                     display: flex;
+                     align-items: center;
+                     gap: 5px;
+                     text-transform: capitalize;
+                     text-decoration: none;
+                     border-radius: 5px;
+                     padding: 4px 8px;
+                     font-size: 14px;
+                     font-weight: 500;
+                     transition: all 0.3s ease-in-out;
+   
+
+                  " onmousemove="this.style.backgroundColor='#F8F8FA';" onmouseout="this.style.backgroundColor='';">
+                     <img src="./assets/img/chat-widget/envelope.png" alt="user-avatar"
+                        style="width: 20px; height: auto;">
+                     Email transcript
+                  </a>
+                  <a href="#" class="custom-dropdown-item" style="
+                     display: flex;
+                     align-items: center;
+                     gap: 5px;
+                     text-transform: capitalize;
+                     text-decoration: none;
+                     border-radius: 5px;
+                     padding: 4px 8px;
+                     font-size: 14px;
+                     font-weight: 500;
+                     transition: all 0.3s ease-in-out;
+                  " onmousemove="this.style.backgroundColor='#F8F8FA';" onmouseout="this.style.backgroundColor='';">
+                     <img src="./assets/img/chat-widget/bell.png" alt="user-avatar" style="width: 20px; height: auto;">
+                     Sound On
+                  </a>
+               </div>
+            </div>
+         </div>
+
+         <div class="message-box-body" style="
+            display: flex; 
+            flex-direction: column;
+            z-index: 1; 
+            position: relative; 
+            height: 400px;
+            max-height: calc(100vh - 285px);
+            overflow: auto;
+            scrollbar-width: thin; 
+            scrollbar-color: #ff6500 #f1f1f1;
+               ">
+            <div class="section-header"
+               style="padding: 16px; padding-bottom: 45px; background-color: #ff6500; text-align: center; color: #ffffff;">
+               <div class="chat-brand"
+                  style="width: 50px; height: 50px; min-width: 50px; display: flex; align-items: center; justify-content: center; margin: 10px auto;">
+                  <img src="./assets/img/logo/favicon.png" alt="img" style="max-width: 100%; height: auto;" />
+               </div>
+               <h4 class="section-title"
+                  style="margin: 0; margin-bottom: 10px; font-size: 24px; text-transform: capitalize; font-weight: 600;">
+                  welcome to TalkWave
+               </h4>
+               <p style="margin: 0; font-size: 18px;">Search our Knowledge Base or start a chat. We're here to help you
+                  24 x 7</p>
+            </div>
+            <div class="section-bottom" style="
+               padding: 0 16px 16px; 
+               flex-grow: 1; 
+               z-index: 1; 
+               margin-top: -20px;">
+               <div class="search-box" style="
+                     position: relative; 
+                     display: flex; 
+                     align-items: center;">
+                  <input type="text" id="search-input" class="form-control" placeholder="Search here..." style="
+                              background-color: #ffffff;
+                              border: 1px solid rgba(231, 234, 243, 0.7);
+                              height: 35px;
+                              padding-right: 50px;
+                              display: block;
+                              width: 100%;
+                              padding: 0.375rem 0.75rem;
+                              font-size: 1rem;
+                              font-weight: 400;
+                              line-height: 1.5;
+                              color: #212529;
+                              background-clip: padding-box;
+                              appearance: none;
+                              transition: all 0.3s ease-in-out;
+                              border-radius: 5px;
+                          "
+                     onfocus="this.style.boxShadow='0 0.375rem 0.75rem rgba(140, 152, 164, 0.075)'; this.style.outline='none'; this.style.borderColor=' rgba(140, 152, 164, 0.25)';"
+                     onblur="this.style.boxShadow=''; this.style.outline=''; this.style.borderColor=' rgba(231, 234, 243, 0.7)';" />
+                  <button type="button" class="search-btn" style="
+                  position: absolute;
+                  background-color: #ff6500;
+                  width: 45px;
+                  height: calc(100% - 4px);
+                  border-radius: 5px;
+                  right: 2px;
+                  border: none;
+                  padding: 12px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  cursor: pointer;
+                  ">
+                     <img src="./assets/img/chat-widget/search.png" alt="img" style="
+                        max-width: 100%;
+                        height: auto;
+                        
+                     ">
+                  </button>
+                  <div class="search-result" id="search-result" style="
+                     position: absolute;
+                     left: 0;
+                     top: calc(100% + 3px);
+                     width: 100%;
+                     background-color: #ffffff;
+                     box-shadow: 0 0.375rem 0.75rem rgba(140, 152, 164, 0.075);
+                     border-radius: 3px;
+                     z-index: 1;
+                     border: 1px solid rgba(231, 234, 243, 0.7);
+                     color: #1a1a1a;
+                     max-height: 346px;
+                     overflow: auto;
+                     display: none;
+                     transition: all 0.3s ease-in-out;
+                  ">
+                     <div class="search-item" style="
+                        padding: 10px;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        line-height: 1.2;
+                        cursor: pointer;
+                        border-bottom: 1px solid rgba(231, 234, 243, 0.7);
+                        transition: all 0.3s ease-in-out;
+                     " onmouseover="this.style.backgroundColor='#ff66001a'"
+                        onmouseout="this.style.backgroundColor='#ffffff'">
+                        <div class="img-area" style="
+                           width: 20px;
+                           min-width: 20px;
+                           height: 20px;
+                        ">
+                           <img src="./assets/img/chat-widget/document.png" alt="img" style="
+                              max-width: 100%;
+                              height: auto;
+                           ">
+                        </div>
+                        <div class="text-area">
+                           <div class="title" style="
+                              font-size: 14px;
+                              text-transform: capitalize;
+                              color: #1B1C20;
+                              overflow: hidden;
+                              text-overflow: ellipsis;
+                              -webkit-box-orient: vertical;
+                              display: -webkit-box;
+                              -webkit-line-clamp: 1;
+                              line-clamp: 1;
+                              ">Promoting customer happiness: Erin Smith, Director of Sales, Swoogo</div>
+                        </div>
+                     </div>
+                     <div class="search-item" style="
+                        padding: 10px;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        line-height: 1.2;
+                        cursor: pointer;
+                        border-bottom: 1px solid rgba(231, 234, 243, 0.7);
+                        transition: all 0.3s ease-in-out;
+                     " onmouseover="this.style.backgroundColor='#ff66001a'"
+                        onmouseout="this.style.backgroundColor='#ffffff'">
+                        <div class="img-area" style="
+                           width: 20px;
+                           min-width: 20px;
+                           height: 20px;
+                        ">
+                           <img src="./assets/img/chat-widget/document.png" alt="img" style="
+                              max-width: 100%;
+                              height: auto;
+                           ">
+                        </div>
+                        <div class="text-area">
+                           <div class="title" style="
+                              font-size: 14px;
+                              text-transform: capitalize;
+                              color: #1B1C20;
+                              overflow: hidden;
+                              text-overflow: ellipsis;
+                              -webkit-box-orient: vertical;
+                              display: -webkit-box;
+                              -webkit-line-clamp: 1;
+                              line-clamp: 1;
+                              ">Adding a tawk.to widget to your squarespace website</div>
+                        </div>
+                     </div>
+                     <div class="search-item" style="
+                        padding: 10px;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        line-height: 1.2;
+                        cursor: pointer;
+                        border-bottom: 1px solid rgba(231, 234, 243, 0.7);
+                        transition: all 0.3s ease-in-out;
+                     " onmouseover="this.style.backgroundColor='#ff66001a'"
+                        onmouseout="this.style.backgroundColor='#ffffff'">
+                        <div class="img-area" style="
+                           width: 20px;
+                           min-width: 20px;
+                           height: 20px;
+                        ">
+                           <img src="./assets/img/chat-widget/document.png" alt="img" style="
+                              max-width: 100%;
+                              height: auto;
+                           ">
+                        </div>
+                        <div class="text-area">
+                           <div class="title" style="
+                              font-size: 14px;
+                              text-transform: capitalize;
+                              color: #1B1C20;
+                              overflow: hidden;
+                              text-overflow: ellipsis;
+                              -webkit-box-orient: vertical;
+                              display: -webkit-box;
+                              -webkit-line-clamp: 1;
+                              line-clamp: 1;
+                              ">Using the Widget Scheduler on Android</div>
+                        </div>
+                     </div>
+                     <div class="search-item" style="
+                        padding: 10px;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        line-height: 1.2;
+                        cursor: pointer;
+                        border-bottom: 1px solid rgba(231, 234, 243, 0.7);
+                        transition: all 0.3s ease-in-out;
+                     " onmouseover="this.style.backgroundColor='#ff66001a'"
+                        onmouseout="this.style.backgroundColor='#ffffff'">
+                        <div class="img-area" style="
+                           width: 20px;
+                           min-width: 20px;
+                           height: 20px;
+                        ">
+                           <img src="./assets/img/chat-widget/document.png" alt="img" style="
+                              max-width: 100%;
+                              height: auto;
+                           ">
+                        </div>
+                        <div class="text-area">
+                           <div class="title" style="
+                              font-size: 14px;
+                              text-transform: capitalize;
+                              color: #1B1C20;
+                              overflow: hidden;
+                              text-overflow: ellipsis;
+                              -webkit-box-orient: vertical;
+                              display: -webkit-box;
+                              -webkit-line-clamp: 1;
+                              line-clamp: 1;
+                              ">How to change the Referrer-Policy setting on your website</div>
+                        </div>
+                     </div>
+                     <div class="search-item" style="
+                        padding: 10px;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        line-height: 1.2;
+                        cursor: pointer;
+                        transition: all 0.3s ease-in-out;
+                     " onmouseover="this.style.backgroundColor='#ff66001a'"
+                        onmouseout="this.style.backgroundColor='#ffffff'">
+                        <div class="img-area" style="
+                           width: 20px;
+                           min-width: 20px;
+                           height: 20px;
+                        ">
+                           <img src="./assets/img/chat-widget/document.png" alt="img" style="
+                              max-width: 100%;
+                              height: auto;
+                           ">
+                        </div>
+                        <div class="text-area">
+                           <div class="title" style="
+                              font-size: 14px;
+                              text-transform: capitalize;
+                              color: #1B1C20;
+                              overflow: hidden;
+                              text-overflow: ellipsis;
+                              -webkit-box-orient: vertical;
+                              display: -webkit-box;
+                              -webkit-line-clamp: 1;
+                              line-clamp: 1;
+                              ">Make: Add a new subscriber to a MailerLite group when a chat starts</div>
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+               <div class="btn-area" style="
+                  margin-top: 10px;
+                  padding: 16px;
+                  background-color: #ffffff;
+                  border-radius: 5px;
+                  display: flex;
+                  gap: 5px;
+               ">
+                  <a href="" style="
+                        background: #ff6500;
+                        padding: 12px 15px;
+                        border-radius: 4px;
+                        transition: all 0.3s ease-in-out;
+                        font-size: 16px;
+                        color: #ffffff;
+                        display: inline-flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-weight: 500;
+                        text-transform: capitalize;
+                        font-family: 'Montserrat', sans-serif;
+                        gap: 5px;
+                        width: 100%;
+                        text-decoration: none;
+                     ">new conversion</a>
+               </div>
+            </div>
+         </div>
+
+         <div class="message-box-footer" style="
+            background-color: #ffffff;
+            text-align: center;
+            border-radius: 5px;
+            border-top: 1px solid rgba(231, 234, 243, 0.7);
+         ">
+            <div class="footer-brand-area" style="
+               padding: 10px;
+            ">
+               <a href="" class="footer-brand" style="
+                  font-size: 14px;
+                  padding: 5px;
+                  color: #1B1C20;
+                  display: inline-flex;
+                  align-items: center;
+                  justify-content: center;
+                  gap: 5px;
+                  text-decoration: none;
+                  border-radius: 15px;
+                  transition: all 0.3s ease-in-out;
+                  " onmouseover="this.style.backgroundColor = '#F8F8FA';"
+                  onmouseout="this.style.backgroundColor = '';">
+
+                  <img src="./assets/img/logo/favicon.png" alt="img" style="width: 20px;" />
+                  <span>Add free <strong>TalkWave</strong> to your site</span>
+               </a>
+            </div>
+            <div class="chat-input-container" style="
+               padding: 10px;
+               display: flex;
+               align-items: center;
+               gap: 5px;
+            ">
+               <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"
+                  placeholder="Type and press enter" style="
+                  border-radius: 15px;
+                  background-color: #ffffff;
+                  border: 1px solid rgba(231, 234, 243, 0.7);
+                  height: 35px;
+                  display: block;
+                  width: 100%;
+                  padding: 0.375rem 0.75rem;
+                  font-size: 1rem;
+                  font-weight: 400;
+                  line-height: 1.5;
+                  color: #212529;
+                  background-clip: padding-box;
+                  appearance: none;
+                  transition: all 0.3s ease-in-out;
+               " onfocus="this.style.boxShadow='0 0.375rem 0.75rem rgba(140, 152, 164, 0.075)'; this.style.outline='none'; this.style.borderColor=' rgba(140, 152, 164, 0.25)';"
+                  onblur="this.style.boxShadow=''; this.style.outline=''; this.style.borderColor=' rgba(231, 234, 243, 0.7)';"></textarea>
+
+               <button class="chat-input-btn" style="
+                  border: none;
+                  width: 30px;
+                  height: 30px;
+                  min-width: 30px;
+                  border-radius: 10px;
+                  background-color: transparent;
+                  padding: 4px;
+                  cursor: pointer;
+               " onmouseover="this.style.backgroundColor='rgba(255, 102, 0, 0.1)'"
+                  onmouseout="this.style.backgroundColor='#ffffff'">
+                  <img src="./assets/img/chat-widget/happy-face.png" alt="img" style="max-width: 100%; height: auto;">
+               </button>
+            </div>
+         </div>
+      </div> -->
+
+
+
+
+
+      <div id="message-box-overlay" class="message-box-overlay" style="
+         position: fixed;
+         right: 10px;
+         bottom: 0px;
+         max-width: 400px;
+         min-width: 320px;
+         background-color: #f8f8fa;
+         border-radius: 5px;
+         width: 100%;
+         z-index: 999999;
+         border: 1px solid rgba(231, 234, 243, 0.7);
+         box-shadow: 0 0.375rem 0.75rem rgba(140, 152, 164, 0.075);
+         font-size: 16px;
+         transition: all 0.3s ease-in-out;
+         opacity: 0;
+         visibility: hidden;
+         ">
+         <div class="message-box-header" style="
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            gap: 5px; 
+            padding: 16px; 
+            background-color: #ff6500; 
+            border-top-left-radius: 5px; 
+            border-top-right-radius: 5px; 
+            color: #ffffff;">
+            <div style="
+               display: flex; 
+               align-items: center; 
+               gap: 5px;">
+               <button id="back-btn" type="button" style="
+                  border: none; 
+                  height: 30px; 
+                  width: 30px; 
+                  min-width: 30px; 
+                  border-radius: 3px; 
+                  display: flex;
+                  align-items: center; 
+                  justify-content: center; 
+                  padding: 3px; 
+                  background-color: transparent; 
+                  cursor: pointer;
+                  transition: all 0.3s ease-in-out;
+             " onmouseover="this.style.backgroundColor = '#ff934d';"
+                  onmouseout="this.style.backgroundColor = 'transparent';">
+                  <img src="./assets/img/chat-widget/angle-left.png" alt="img" style="max-width: 100%; height: auto;" />
+               </button>
+            </div>
+         </div>
+
+         <div class="message-box-body" style="
+            display: flex; 
+            flex-direction: column;
+            z-index: 1; 
+            position: relative; 
+            height: 475px;
+            max-height: calc(100vh - 210px);
+            overflow: auto;
+            scrollbar-width: thin; 
+            scrollbar-color: #ff6500 #f1f1f1;
+         ">
+            <div style="
+               padding: 16px;
+               background-color: #ffffff;
+            ">
+               <p style="margin: 0;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat, saepe
+                  dignissimos! Ducimus
+                  assumenda
+                  tempore dolor blanditiis ratione error accusantium perferendis quam? Illum incidunt quos adipisci fuga
+                  optio, ipsam doloribus beatae velit. Laboriosam velit, sequi ad totam cum repudiandae quos dicta?
+                  Nesciunt, aliquam neque ullam excepturi nostrum voluptatum perspiciatis nisi quia beatae dolores nihil
+                  eaque, voluptatibus culpa itaque sint. Molestias eum consequuntur culpa ex numquam quas, repellendus
+                  laudantium tenetur, officiis nulla cum ducimus possimus quia optio voluptatibus est mollitia dolor
+                  voluptas hic, enim omnis! Rem, accusantium porro? Itaque, sint impedit deserunt ullam iure, a dolorum
+                  ipsum eius dolore voluptate aperiam maxime, eligendi voluptatibus fugiat officia aut? Blanditiis ipsum
+                  pariatur officia placeat neque iste nihil perspiciatis sunt veniam autem, ipsam inventore fuga aliquam
+                  minus aperiam deserunt libero iure ratione harum distinctio quo! Fuga fugiat assumenda iste voluptas
+                  autem quae eveniet natus repellendus impedit, obcaecati explicabo voluptatibus quam quod consequuntur
+                  necessitatibus dolore maxime non, sunt excepturi ut, suscipit aperiam ratione sed dolorum? Totam porro
+                  corporis quo quas autem ipsum voluptas. Quibusdam ipsa rerum corporis aut sunt inventore! Neque
+                  voluptas
+                  dicta autem odit asperiores rem ipsum suscipit atque ipsam commodi voluptatum ea provident unde in,
+                  eveniet hic iusto nobis quos, vitae placeat numquam omnis.</p>
+            </div>
+         </div>
+
+         <div class="message-box-footer" style="
+            background-color: #ffffff;
+            text-align: center;
+            border-radius: 5px;
+            border-top: 1px solid rgba(231, 234, 243, 0.7);
+         ">
+            <div class="footer-brand-area" style="
+               padding: 10px;
+            ">
+               <a href="" class="footer-brand" style="
+                  font-size: 14px;
+                  padding: 5px;
+                  color: #1B1C20;
+                  display: inline-flex;
+                  align-items: center;
+                  justify-content: center;
+                  gap: 5px;
+                  text-decoration: none;
+                  border-radius: 15px;
+                  transition: all 0.3s ease-in-out;
+          " onmouseover="this.style.backgroundColor = '#F8F8FA';" onmouseout="this.style.backgroundColor = '';">
+
+                  <img src="./assets/img/logo/favicon.png" alt="img" style="width: 20px;" />
+                  <span>Add free <strong>TalkWave</strong> to your site</span>
+               </a>
+            </div>
+         </div>
+      </div>
+
+
+
+
+      <div id="message-box" class="message-box" style="
+              position: fixed;
+              right: 10px;
+              bottom: 90px;
+              max-width: 400px;
+              min-width: 320px;
+              background-color: #f8f8fa;
+              border-radius: 5px;
+              width: 100%;
+              z-index: 99999;
+              border: 1px solid rgba(231, 234, 243, 0.7);
+              box-shadow: 0 0.375rem 0.75rem rgba(140, 152, 164, 0.075);
+              font-size: 16px;             
+              
+          ">
+         <div class="message-box-header"
+            style="display: flex; justify-content: space-between; align-items: center; gap: 5px; padding: 16px; background-color: #ff6500; border-top-left-radius: 5px; border-top-right-radius: 5px; color: #ffffff;">
+            <div style="display: flex; align-items: center; gap: 5px;">
+               <button type="button" style="
+                     border: none; 
+                     height: 30px; 
+                     width: 30px; 
+                     min-width: 30px; 
+                     border-radius: 3px; 
+                     display: flex;
+                     align-items: center; 
+                     justify-content: center; 
+                     padding: 3px; 
+                     background-color: transparent; 
+                     cursor: pointer;
+                     transition: all 0.3s ease-in-out;
+                     " onmouseover="this.style.backgroundColor = '#ff934d';"
+                  onmouseout="this.style.backgroundColor = 'transparent';">
+                  <img src="./assets/img/chat-widget/angle-left.png" alt="img" style="max-width: 100%; height: auto;" />
+               </button>
+               <div class="profile"
+                  style="display: flex; align-items: center; gap: 10px; line-height: 10px; color: #ffffff; text-transform: capitalize;">
+                  <div class="thumbs-area">
+                     <img src="./assets/img/Person/10.jpg" alt=""
+                        style="border-radius: 10px; width: 35px; height: 35px;" />
+                  </div>
+                  <div class="content-area">
+                     <h6
+                        style="font-size: 16px; font-weight: 500; margin: 0; margin-bottom: 7px; font-family: 'Montserrat', sans-serif;">
+                        Hi there!
+                     </h6>
+                     <small>Customer Care</small>
+                  </div>
+               </div>
+            </div>
+            <div class="custom-dropdown" style="
+               position: relative;">
+               <button id="custom-dropdown-toggle" type="button" style="
+                  border: none; 
+                  height: 30px; 
+                  width: 30px; 
+                  min-width: 30px;
+                  border-radius: 3px; 
+                  background-color: transparent; 
+                  cursor: pointer; 
+                  padding: 3px;
+                  transition: all 0.3s ease-in-out;
+                  " onmouseover="this.style.backgroundColor = '#ff934d';"
+                  onmouseout="this.style.backgroundColor = 'transparent';">
+                  <img src="./assets/img/chat-widget/align-right.png" alt="img"
+                     style="max-width: 100%; height: auto;" />
+               </button>
+               <div id="custom-dropdown-menu" style="
+                  position: absolute;
+                  z-index: 1000;
+                  min-width: 13rem;
+                  background-color: #ffffff;
+                  border-radius: 5px;
+                  overflow: auto;
+                  max-height: 30rem;
+                  inset: 0px 0px auto auto;
+                  top: calc(100% + 5px);
+                  box-shadow: 0 0.375rem 0.75rem rgba(140, 152, 164, 0.075);
+                  padding: 8px;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 5px;
+                  visibility: hidden;
+               ">
+                  <a href="#" class="custom-dropdown-item" style="
+                     display: flex;
+                     align-items: center;
+                     gap: 5px;
+                     text-transform: capitalize;
+                     text-decoration: none;
+                     border-radius: 5px;
+                     padding: 4px 8px;
+                     font-size: 14px;
+                     font-weight: 500;
+                     transition: all 0.3s ease-in-out;
+   
+
+                  " onmousemove="this.style.backgroundColor='#F8F8FA';" onmouseout="this.style.backgroundColor='';">
+                     <img src="./assets/img/chat-widget/user-avatar.png" alt="user-avatar"
+                        style="width: 20px; height: auto;">
+                     change name
+                  </a>
+                  <a href="#" class="custom-dropdown-item" style="
+                     display: flex;
+                     align-items: center;
+                     gap: 5px;
+                     text-transform: capitalize;
+                     text-decoration: none;
+                     border-radius: 5px;
+                     padding: 4px 8px;
+                     font-size: 14px;
+                     font-weight: 500;
+                     transition: all 0.3s ease-in-out;
+   
+
+                  " onmousemove="this.style.backgroundColor='#F8F8FA';" onmouseout="this.style.backgroundColor='';">
+                     <img src="./assets/img/chat-widget/envelope.png" alt="user-avatar"
+                        style="width: 20px; height: auto;">
+                     Email transcript
+                  </a>
+                  <a href="#" class="custom-dropdown-item" style="
+                     display: flex;
+                     align-items: center;
+                     gap: 5px;
+                     text-transform: capitalize;
+                     text-decoration: none;
+                     border-radius: 5px;
+                     padding: 4px 8px;
+                     font-size: 14px;
+                     font-weight: 500;
+                     transition: all 0.3s ease-in-out;
+                  " onmousemove="this.style.backgroundColor='#F8F8FA';" onmouseout="this.style.backgroundColor='';">
+                     <img src="./assets/img/chat-widget/bell.png" alt="user-avatar" style="width: 20px; height: auto;">
+                     Sound On
+                  </a>
+               </div>
+            </div>
+         </div>
+
+         <div class="message-box-body" style="
+            display: flex; 
+            flex-direction: column;
+            z-index: 1; 
+            position: relative; 
+            height: 400px;
+            max-height: calc(100vh - 285px);
+            overflow: auto;
+            scrollbar-width: thin; 
+            scrollbar-color: #ff6500 #f1f1f1;
+            ">
+            <div class="widget-chat-box" style="
+               padding: 16px;
+            ">
+               <div class="message-bubble message-bubble-right" style="
+                  display: flex;
+                  gap: 10px;
+                  margin: 15px 0;
+                  flex-direction: row-reverse;
+               ">
+                  <div class="bubble-thumbs">
+                     <img src="./assets/img/Person/10.jpg" alt="img" style="
+                        border-radius: 50%;
+                        min-width: 30px;
+                        min-height: 30px;
+                        width: 30px;
+                        height: 30px;
+                        border: 1px solid #ffffff;
+                        ">
+                  </div>
+                  <div style="
+                     display: flex;
+                     flex-direction: column;
+                     gap: 5px;
+                  ">
+                     <div class="bubble-content" style="
+                        padding: 5px 10px;
+                        border-radius: 15px;
+                        border-top-right-radius: 0;
+                        background: #ffffff;
+                        color: #1B1C20;
+                     ">
+                        Lorem ipsum dolor sit amet.
+                     </div>
+                     <p style="
+                        margin: 0;
+                        font-size: 12px;
+                        text-align: end;
+                  "> 14 Jul 12.13pm</p>
+                  </div>
+
+               </div>
+               <div class="message-bubble" style="
+                  display: flex;
+                  gap: 10px;
+                  margin: 15px 0;
+               ">
+                  <div class="bubble-thumbs">
+                     <img src="./assets/img/Person/1.jpg" alt="img" style="
+                           border-radius: 50%;
+                           min-width: 30px;
+                           min-height: 30px;
+                           width: 30px;
+                           height: 30px;
+                           border: 1px solid #ffffff;
+                        ">
+                  </div>
+                  <div style="
+                     display: flex;
+                     flex-direction: column;
+                     gap: 5px;
+                  ">
+                     <div class="bubble-content" style="
+                        padding: 5px 10px;
+                        border-radius: 15px;
+                        border-top-left-radius: 0;
+                        background: #ff6500;
+                        color: #ffffff;
+                     ">
+                        Lorem ipsum dolor sit amet.
+                     </div>
+                     <p style="
+                        margin: 0;
+                        font-size: 12px;
+                  "> 14 Jul 12.13pm</p>
+                  </div>
+
+               </div>
+               <div class="message-bubble message-bubble-right" style="
+                  display: flex;
+                  gap: 10px;
+                  margin: 15px 0;
+                  flex-direction: row-reverse;
+               ">
+                  <div class="bubble-thumbs">
+                     <img src="./assets/img/Person/10.jpg" alt="img" style="
+                        border-radius: 50%;
+                        min-width: 30px;
+                        min-height: 30px;
+                        width: 30px;
+                        height: 30px;
+                        border: 1px solid #ffffff;
+                        ">
+                  </div>
+                  <div style="
+                     display: flex;
+                     flex-direction: column;
+                     gap: 5px;
+                  ">
+                     <div class="bubble-content" style="
+                        padding: 5px 10px;
+                        border-radius: 15px;
+                        border-top-right-radius: 0;
+                        background: #ffffff;
+                        color: #1B1C20;
+                     ">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, sunt.
+
+                     </div>
+                     <p style="
+                        margin: 0;
+                        font-size: 12px;
+                        text-align: end;
+                  "> 14 Jul 12.13pm</p>
+                  </div>
+
+               </div>
+               <div class="message-bubble" style="
+                  display: flex;
+                  gap: 10px;
+                  margin: 15px 0;
+               ">
+                  <div class="bubble-thumbs">
+                     <img src="./assets/img/Person/1.jpg" alt="img" style="
+                           border-radius: 50%;
+                           min-width: 30px;
+                           min-height: 30px;
+                           width: 30px;
+                           height: 30px;
+                           border: 1px solid #ffffff;
+                        ">
+                  </div>
+                  <div style="
+                     display: flex;
+                     flex-direction: column;
+                     gap: 5px;
+                  ">
+                     <div class="bubble-content" style="
+                        padding: 5px 10px;
+                        border-radius: 15px;
+                        border-top-left-radius: 0;
+                        background: #ff6500;
+                        color: #ffffff;
+                     ">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, sunt.
+
+                     </div>
+                     <p style="
+                        margin: 0;
+                        font-size: 12px;
+                  "> 14 Jul 12.13pm</p>
+                  </div>
+
+               </div>
+               <div class="message-bubble message-bubble-right" style="
+                  display: flex;
+                  gap: 10px;
+                  margin: 15px 0;
+                  flex-direction: row-reverse;
+               ">
+                  <div class="bubble-thumbs">
+                     <img src="./assets/img/Person/10.jpg" alt="img" style="
+                        border-radius: 50%;
+                        min-width: 30px;
+                        min-height: 30px;
+                        width: 30px;
+                        height: 30px;
+                        border: 1px solid #ffffff;
+                        ">
+                  </div>
+                  <div style="
+                     display: flex;
+                     flex-direction: column;
+                     gap: 5px;
+                  ">
+                     <div class="bubble-content" style="
+                        padding: 5px 10px;
+                        border-radius: 15px;
+                        border-top-right-radius: 0;
+                        background: #ffffff;
+                        color: #1B1C20;
+                     ">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, laborum dicta fugiat molestiae
+                        voluptatum ipsam. Velit doloremque sunt, excepturi placeat quae quas eligendi commodi nemo
+                        obcaecati iure ipsum ipsa. Officia?
+                     </div>
+                     <p style="
+                        margin: 0;
+                        font-size: 12px;
+                        text-align: end;
+                  "> 14 Jul 12.13pm</p>
+                  </div>
+
+               </div>
+               <div class="message-bubble" style="
+                  display: flex;
+                  gap: 10px;
+                  margin: 15px 0;
+               ">
+                  <div class="bubble-thumbs">
+                     <img src="./assets/img/Person/1.jpg" alt="img" style="
+                           border-radius: 50%;
+                           min-width: 30px;
+                           min-height: 30px;
+                           width: 30px;
+                           height: 30px;
+                           border: 1px solid #ffffff;
+                        ">
+                  </div>
+                  <div style="
+                     display: flex;
+                     flex-direction: column;
+                     gap: 5px;
+                  ">
+                     <div class="bubble-content" style="
+                        padding: 5px 10px;
+                        border-radius: 15px;
+                        border-top-left-radius: 0;
+                        background: #ff6500;
+                        color: #ffffff;
+                     ">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, laborum dicta fugiat molestiae
+                        voluptatum ipsam. Velit doloremque sunt, excepturi placeat quae quas eligendi commodi nemo
+                        obcaecati iure ipsum ipsa. Officia?
+                     </div>
+                     <p style="
+                        margin: 0;
+                        font-size: 12px;
+                  "> 14 Jul 12.13pm</p>
+                  </div>
+
+               </div>
+               <div class="message-bubble message-bubble-right" style="
+                  display: flex;
+                  gap: 10px;
+                  margin: 15px 0;
+                  flex-direction: row-reverse;
+               ">
+                  <div class="bubble-thumbs">
+                     <img src="./assets/img/Person/10.jpg" alt="img" style="
+                     border-radius: 50%;
+                     min-width: 30px;
+                     min-height: 30px;
+                     width: 30px;
+                     height: 30px;
+                     border: 1px solid #ffffff;
+                     ">
+                  </div>
+                  <div style="
+                     display: flex;
+                     flex-direction: column;
+                     gap: 5px;
+                  ">
+                     <a href="./assets/img/how-it-works/how-it-works.jpeg" target="_blank" style="
+                     padding: 5px;
+                     border-radius: 15px;
+                     border-top-right-radius: 0;
+                     background: #ffffff;
+                     color: #1B1C20;
+                     max-width: 200px;
+                  ">
+                        <img style="
+                           width: 100%; 
+                           height: 100%; 
+                           border-radius: 10px; 
+                           object-fit: fill;" src="./assets/img/how-it-works/how-it-works.jpeg" alt="">
+                     </a>
+                     <p style="
+                        margin: 0;
+                        font-size: 12px;
+                        text-align: end;
+                     "> 14 Jul 12.13pm</p>
+                  </div>
+               </div>
+               <div class="message-bubble message-bubble-right" style="
+                  display: flex;
+                  gap: 10px;
+                  margin: 15px 0;
+                  flex-direction: row-reverse;
+               ">
+                  <div class="bubble-thumbs">
+                     <img src="./assets/img/Person/10.jpg" alt="img" style="
+                     border-radius: 50%;
+                     min-width: 30px;
+                     min-height: 30px;
+                     width: 30px;
+                     height: 30px;
+                     border: 1px solid #ffffff;
+                     ">
+                  </div>
+                  <div style="
+                     display: flex;
+                     flex-direction: column;
+                     gap: 5px;
+                  ">
+                     <div style="
+                        padding: 5px;
+                        border-radius: 15px;
+                        border-top-right-radius: 0;
+                        background: #ffffff;
+                        color: #1B1C20;
+                        max-width: 200px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+                     ">
+                        <a href="./assets/img/how-it-works/how-it-works.jpeg" target="_blank" style="
+                           display: flex;
+                        ">
+                           <img style="
+                           width: 100%; 
+                           height: 100%; 
+                           border-radius: 10px; 
+                           object-fit: fill;" src="./assets/img/how-it-works/how-it-works.jpeg" alt="">
+                        </a>
+                        <p style="
+                           margin: 0;
+                           font-size: 16px;
+                           padding: 0 5px;
+                        ">
+                           this is caption
+                        </p>
+                     </div>
+                     <p style="
+                        margin: 0;
+                        font-size: 12px;
+                        text-align: end;
+                     "> 14 Jul 12.13pm</p>
+                  </div>
+               </div>
+               <div class="message-bubble message-bubble-right" style="
+                  display: flex;
+                  gap: 10px;
+                  margin: 15px 0;
+                  flex-direction: row-reverse;
+               ">
+                  <div class="bubble-thumbs">
+                     <img src="./assets/img/Person/10.jpg" alt="img" style="
+                     border-radius: 50%;
+                     min-width: 30px;
+                     min-height: 30px;
+                     width: 30px;
+                     height: 30px;
+                     border: 1px solid #ffffff;
+                     ">
+                  </div>
+                  <div style="
+                     display: flex;
+                     flex-direction: column;
+                     gap: 5px;
+                  ">
+                     <div style="
+                        padding: 5px;
+                        border-radius: 15px;
+                        border-top-right-radius: 0;
+                        background: #ffffff;
+                        color: #1B1C20;
+                        max-width: 200px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 5px;
+                     ">
+                        <a href="./assets/img/how-it-works/how-it-works.jpeg" target="_blank" style="
+                           display: flex;
+                        ">
+                           <img style="
+                           width: 100%; 
+                           height: 100%; 
+                           border-radius: 10px; 
+                           object-fit: fill;" src="./assets/img/how-it-works/how-it-works.jpeg" alt="">
+                        </a>
+                        <a href="./assets/img/how-it-works/how-it-works.jpeg" target="_blank" style="
+                           display: flex;
+                        ">
+                           <img style="
+                           width: 100%; 
+                           height: 100%; 
+                           border-radius: 10px; 
+                           object-fit: fill;" src="./assets/img/how-it-works/how-it-works.jpeg" alt="">
+                        </a>
+                        <p style="
+                           margin: 0;
+                           font-size: 16px;
+                           padding: 0 5px;
+                        ">
+                           this is caption
+                        </p>
+                     </div>
+                     <p style="
+                        margin: 0;
+                        font-size: 12px;
+                        text-align: end;
+                     "> 14 Jul 12.13pm</p>
+                  </div>
+               </div>
+               <div class="message-bubble message-bubble-right" style="
+               display: flex;
+               gap: 10px;
+               margin: 15px 0;
+               flex-direction: row-reverse;
+            ">
+                  <div class="bubble-thumbs">
+                     <img src="./assets/img/Person/10.jpg" alt="img" style="
+                     border-radius: 50%;
+                     min-width: 30px;
+                     min-height: 30px;
+                     width: 30px;
+                     height: 30px;
+                     border: 1px solid #ffffff;
+                     ">
+                  </div>
+                  <div style="
+                     display: flex;
+                     flex-direction: column;
+                     gap: 5px;
+                  ">
+                     <a href="./assets/img/back-photo/download.jpeg" target="_blank" download style="
+                        padding: 8px 12px;
+                        border-radius: 15px;
+                        border-top-right-radius: 0;
+                        background: #ffffff;
+                        color: #1B1C20;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        text-decoration: none;
+                        min-width: 180px;
+                     ">
+                        <div style="
+                           width: 23px; 
+                           min-width: 23px;
+                           height: 23px; 
+                           padding: 8px; 
+                           background-color: #ff6500; 
+                           border-radius: 50%;
+                           
+                        ">
+                           <img style="width: 100%; 
+                           height: 100%; 
+                           border-radius: 10px; 
+                           object-fit: fill;" src="./assets/img/blank-page.png" alt="">
+                        </div>
+                        <div>
+                           <h6 style="
+                              font-size: 15px;
+                              margin: 0;
+                              font-weight: 500;
+                              overflow: hidden;
+                              text-overflow: ellipsis;
+                              -webkit-box-orient: vertical;
+                              display: -webkit-box;
+                              -webkit-line-clamp: 1;
+                              line-clamp: 1;
+                              word-break: break-all;
+                              ">abcdefgh.pdf</h6>
+                           <p style="
+                                 font-size: 12px;
+                                 margin: 0;
+                                color: #ff6500; 
+                              ">
+                              13.3 MB
+                           </p>
+                        </div>
+
+                     </a>
+                     <p style="
+                     margin: 0;
+                     font-size: 12px;
+                     text-align: end;
+                  "> 14 Jul 12.13pm</p>
+                  </div>
+
+               </div>
+               <div class="message-bubble message-bubble-right" style="
+               display: flex;
+               gap: 10px;
+               margin: 15px 0;
+               flex-direction: row-reverse;
+            ">
+                  <div class="bubble-thumbs">
+                     <img src="./assets/img/Person/10.jpg" alt="img" style="
+                     border-radius: 50%;
+                     min-width: 30px;
+                     min-height: 30px;
+                     width: 30px;
+                     height: 30px;
+                     border: 1px solid #ffffff;
+                     ">
+                  </div>
+                  <div style="
+                     display: flex;
+                     flex-direction: column;
+                     gap: 5px;
+                  ">
+                     <a href="./assets/img/back-photo/download.jpeg" target="_blank" download style="
+                        padding: 8px 12px;
+                        border-radius: 15px;
+                        border-top-right-radius: 0;
+                        background: #ffffff;
+                        color: #1B1C20;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        text-decoration: none;
+                        min-width: 180px;
+                     ">
+                        <div style="
+                           width: 23px; 
+                           min-width: 23px;
+                           height: 23px; 
+                           padding: 8px; 
+                           background-color: #ff6500; 
+                           border-radius: 50%;
+                           
+                        ">
+                           <img style="width: 100%; 
+                           height: 100%; 
+                           border-radius: 10px; 
+                           object-fit: fill;" src="./assets/img/blank-page.png" alt="">
+                        </div>
+                        <div>
+                           <h6 style="
+                              font-size: 15px;
+                              margin: 0;
+                              font-weight: 500;
+                              overflow: hidden;
+                              text-overflow: ellipsis;
+                              -webkit-box-orient: vertical;
+                              display: -webkit-box;
+                              -webkit-line-clamp: 1;
+                              line-clamp: 1;
+                              word-break: break-all;
+                              ">xyz.zip</h6>
+                           <p style="
+                                 font-size: 12px;
+                                 margin: 0;
+                                color: #ff6500; 
+                              ">
+                              13.3 MB
+                           </p>
+                        </div>
+
+                     </a>
+                     <p style="
+                     margin: 0;
+                     font-size: 12px;
+                     text-align: end;
+                  "> 14 Jul 12.13pm</p>
+                  </div>
+
+               </div>
+               <div class="message-bubble message-bubble-right" style="
+               display: flex;
+               gap: 10px;
+               margin: 15px 0;
+               flex-direction: row-reverse;
+            ">
+                  <div class="bubble-thumbs">
+                     <img src="./assets/img/Person/10.jpg" alt="img" style="
+                     border-radius: 50%;
+                     min-width: 30px;
+                     min-height: 30px;
+                     width: 30px;
+                     height: 30px;
+                     border: 1px solid #ffffff;
+                     ">
+                  </div>
+                  <div style="
+                     display: flex;
+                     flex-direction: column;
+                     gap: 5px;
+                  ">
+                     <a href="./assets/img/back-photo/download.jpeg" target="_blank" style="
+                        padding: 5px;
+                        border-radius: 15px;
+                        border-top-right-radius: 0;
+                        background: #ffffff;
+                        color: #1B1C20;
+                        max-width: 200px;
+                     ">
+                        <img style="width: 100%; height: 100%; border-radius: 10px; object-fit: fill;"
+                           src="./assets/img/back-photo/download.jpeg" alt="">
+
+                     </a>
+                     <p style="
+                     margin: 0;
+                     font-size: 12px;
+                     text-align: end;
+                  "> 14 Jul 12.13pm</p>
+                  </div>
+
+               </div>
+
+            </div>
+         </div>
+
+         <div class="message-box-footer" style="
+            background-color: #ffffff;
+            text-align: center;
+            border-radius: 5px;
+            border-top: 1px solid rgba(231, 234, 243, 0.7);
+         ">
+            <div class="footer-brand-area" style="padding: 10px;">
+               <a href="" class="footer-brand" style="
+                  font-size: 14px;
+                  padding: 5px;
+                  color: #1B1C20;
+                  display: inline-flex;
+                  align-items: center;
+                  justify-content: center;
+                  gap: 5px;
+                  text-decoration: none;
+                  border-radius: 15px;
+                  transition: all 0.3s ease-in-out;
+                  " onmouseover="this.style.backgroundColor = '#F8F8FA';"
+                  onmouseout="this.style.backgroundColor = '';">
+                  <img src="./assets/img/logo/favicon.png" alt="img" style="width: 20px;" />
+                  <span>Add free <strong>TalkWave</strong> to your site</span>
+               </a>
+            </div>
+            <div class="file-upload-box" id="fileUploadBox" style="
+               margin: 0 15px;
+               padding: 10px;
+               border: 1px solid rgba(231, 234, 243, 0.7);
+               border-radius: 5px;
+               position: relative;">
+               <a href="">
+                  <img class="close-btn" style="
+                     width: 12px;
+                     height: 12px;
+                     padding: 7px;
+                     border: 1px solid rgba(231, 234, 243, 0.7);
+                     border-radius: 50%;
+                     position: absolute;
+                     right: -12px;
+                     top: -12px;
+                     background-color: #ffffff;" src="./assets/img/chat-widget/close2.png" alt="">
+               </a>
+               <div class="file-upload-list" id="preview"></div>
+            </div>
+            <div class="chat-input-container" style="
+               padding: 10px;
+               display: flex;
+               align-items: center;
+               gap: 5px;">
+               <button class="chat-input-btn" style="
+               border: none;
+               width: 30px;
+               height: 30px;
+               min-width: 30px;
+               border-radius: 10px;
+               background-color: transparent;
+               padding: 4px;
+               cursor: pointer;
+               position: relative;" onmouseover="this.style.backgroundColor='rgba(255, 102, 0, 0.1)'"
+                  onmouseout="this.style.backgroundColor='#ffffff'">
+                  <img src="./assets/img/chat-widget/attach-file.png" alt="img" style="max-width: 100%; height: auto;">
+                  <input type="file" name="" id="fileInput" multiple style="
+                     position: absolute;
+                     left: 0;
+                     top: 0;
+                     width: 30px;
+                     height: 30px;
+                     opacity: 0;
+                     cursor: pointer;">
+               </button>
+               <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"
+                  placeholder="Type and press enter" style="
+                  border-radius: 15px;
+                  background-color: #ffffff;
+                  border: 1px solid rgba(231, 234, 243, 0.7);
+                  height: 30px;
+                  display: block;
+                  width: 100%;
+                  padding: 0.375rem 0.75rem;
+                  font-size: 1rem;
+                  font-weight: 400;
+                  line-height: 1.5;
+                  color: #212529;
+                  background-clip: padding-box;
+                  appearance: none;
+                  transition: all 0.3s ease-in-out;"
+                  onfocus="this.style.boxShadow='0 0.375rem 0.75rem rgba(140, 152, 164, 0.075)'; this.style.outline='none'; this.style.borderColor=' rgba(140, 152, 164, 0.25)';"
+                  onblur="this.style.boxShadow=''; this.style.outline=''; this.style.borderColor=' rgba(231, 234, 243, 0.7)';"></textarea>
+               <button class="chat-input-btn" style="
+                  border: none;
+                  width: 30px;
+                  height: 30px;
+                  min-width: 30px;
+                  border-radius: 10px;
+                  background-color: transparent;
+                  padding: 4px;
+                  cursor: pointer;" onmouseover="this.style.backgroundColor='rgba(255, 102, 0, 0.1)'"
+                  onmouseout="this.style.backgroundColor='#ffffff'">
+                  <img src="./assets/img/chat-widget/happy-face.png" alt="img" style="max-width: 100%; height: auto;">
+               </button>
+            </div>
+         </div>
+      </div>
+
+
+   </div>
+
+
+   <script>
+      // chat widget button toggleMessageBox start
+      function toggleMessageBox() {
+         const messageBox = document.getElementById('message-box');
+         const messageBoxOverlay = document.getElementById('message-box-overlay');
+         const chatWidgetButtonImg = document.querySelector('#chat-widget-button img');
+
+         if (messageBox.style.display === 'none') {
+            messageBox.style.display = 'block';
+            chatWidgetButtonImg.src = './assets/img/chat-widget/close.png';
+         } else {
+            messageBox.style.display = 'none';
+            messageBoxOverlay.style.opacity = '0';
+            messageBoxOverlay.style.visibility = 'none';
+            messageBoxOverlay.style.zIndex = '9999';
+            chatWidgetButtonImg.src = './assets/img/chat-widget/messenger.png';
+         }
+      }
+
+      window.onload = () => {
+         const chatWidgetButton = document.getElementById('chat-widget-button');
+         chatWidgetButton.addEventListener('click', toggleMessageBox);
+      };
+      // chat widget button toggleMessageBox end
+
+
+      // custom dropdown start
+      function handleDropdown(event) {
+         const customDropdownMenu = document.getElementById('custom-dropdown-menu');
+         const customDropdownToggle = document.getElementById('custom-dropdown-toggle');
+
+         if (customDropdownToggle.contains(event.target)) {
+            if (
+               customDropdownMenu.style.visibility === 'hidden' ||
+               customDropdownMenu.style.visibility === ''
+            ) {
+               customDropdownMenu.style.visibility = 'visible';
+               customDropdownMenu.style.opacity = '1';
+            } else {
+               customDropdownMenu.style.visibility = 'hidden';
+               customDropdownMenu.style.opacity = '0';
+            }
+         } else {
+            if (
+               customDropdownMenu.style.visibility === 'visible' &&
+               !customDropdownMenu.contains(event.target)
+            ) {
+               customDropdownMenu.style.visibility = 'hidden';
+               customDropdownMenu.style.opacity = '0';
+            }
+         }
+      }
+
+      window.addEventListener('DOMContentLoaded', function () {
+         document.addEventListener('click', handleDropdown);
+      });
+      // custom dropdown end
+
+      // Search box start
+      function toggleSearchResults() {
+         const searchInput = document.querySelector('.search-box input');
+         const searchResult = document.getElementById('search-result');
+
+         if (searchInput.value.trim() === '') {
+            searchResult.style.display = 'none';
+         } else {
+            searchResult.style.display = 'block';
+         }
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+         const searchInput = document.querySelector('.search-box input');
+         searchInput.addEventListener('keyup', toggleSearchResults);
+      });
+      // Search box end
+
+      // Search item click to show/hide message box overlay start
+      document.addEventListener("DOMContentLoaded", function () {
+         const searchItems = document.querySelectorAll(".search-item");
+         const messageBoxOverlay = document.getElementById("message-box-overlay");
+         const backBtn = document.getElementById("back-btn");
+
+         searchItems.forEach(function (item) {
+            item.addEventListener("click", function () {
+               messageBoxOverlay.style.opacity = "1";
+               messageBoxOverlay.style.visibility = "visible";
+               messageBoxOverlay.style.bottom = "90px";
+               messageBoxOverlay.style.zIndex = '999999';
+            });
+         });
+
+         backBtn.addEventListener("click", function () {
+            messageBoxOverlay.style.opacity = "0";
+            messageBoxOverlay.style.visibility = "hidden";
+            messageBoxOverlay.style.bottom = "0";
+         });
+      });
+      // Search item click to show/hide message box overlay end
+
+      // file preview start
+      document.getElementById('fileInput').addEventListener('change', function (event) {
+         const preview = document.getElementById('preview');
+         const fileUploadBox = document.getElementById('fileUploadBox');
+
+         if (event.target.files.length > 0) {
+            fileUploadBox.classList.add('visible');
+         } else {
+            fileUploadBox.classList.remove('visible');
+         }
+
+         Array.from(event.target.files).forEach(file => {
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+               const previewItem = document.createElement('div');
+               previewItem.classList.add('item');
+
+               if (file.type.startsWith('image/')) {
+                  const img = document.createElement('img');
+                  img.src = e.target.result;
+                  previewItem.appendChild(img);
+               } else {
+                  const text = document.createElement('p');
+                  text.style.margin = '0';
+                  text.style.padding = '5px';
+                  text.style.wordBreak = 'break-all';
+                  text.style.overflow = 'hidden';
+                  text.style.textOverflow = 'ellipsis';
+                  text.style.webkitBoxOrient = 'vertical';
+                  text.style.display = '-webkit-box';
+                  text.style.webkitLineClamp = '2';
+                  text.textContent = file.name;
+                  previewItem.appendChild(text);
+               }
+
+               preview.appendChild(previewItem);
+            };
+
+            reader.readAsDataURL(file);
+         });
+      });
+      // file preview end
+   </script>
+
+
+
+</body>
+
+</html>
