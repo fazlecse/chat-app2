@@ -77,29 +77,40 @@ $(document).ready(function () {
     });
     // Testimonial section start
     // Owl carousel 
-    $(function (e) {
-        "use strict";
-        $('.testimonial-carousel').owlCarousel({
-            loop: true,
-            autoplay: true,
-            margin: 10,
-            nav: false,
-            dots: true,
-            // rtl: true,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 2
-                },
-                1000: {
-                    items: 3
-                }
+    $('.testimonial-carousel').owlCarousel({
+        loop: true,
+        autoplay: true,
+        margin: 20,
+        autoplayTimeout: 2000,
+        navText: ["<i class='fa-regular fa-angle-left'></i>", "<i class='fa-regular fa-angle-right'></i>"],
+        // rtl: true,
+        responsive: {
+            0: {
+                items: 1,
+                dotsEach: 3
+
+            },
+            600: {
+                items: 1,
+                nav: false,
+                dots: true,
+                dotsEach: 2
+
+            },
+            768: {
+                items: 2,
+                nav: true,
+                dots: false,
+
+            },
+            1000: {
+                items: 2,
+                nav: true,
+                dots: false,
             }
-        });
+        }
     });
-    // Testimonial section start
+    // Testimonial section end
     // cmn select2 start
     $('.cmn-select2').select2();
     // cmn select2 end
@@ -207,6 +218,45 @@ $(document).ready(function () {
         });
     }
     // Range area end
+    // Circle progress start
+    if ($('.circle').length) {
+        $('.first.circle').circleProgress({
+            value: 0.83,
+            size: 200,
+            fill: {
+                gradient: ["#fbac24", "#ff871a"]
+            }
+        }).on('circle-animation-progress', function (event, progress) {
+            $(this).find('span').html(Math.round(83 * progress) + '<i>%</i>');
+            $(this).find('span').addClass('percent');
+        });
+    }
+
+    if ($('.circle').length) {
+        $('.second.circle').circleProgress({
+            value: 0.35,
+            size: 200,
+            fill: {
+                gradient: ["#fbac24", "#ff871a"]
+            }
+        }).on('circle-animation-progress', function (event, progress) {
+            $(this).find('span').html(Math.round(35 * progress) + '<i>%</i>');
+            $(this).find('span').addClass('percent');
+        });
+
+    }
+    if ($('.circle').length) {
+        $('.third.circle').circleProgress({
+            value: 0.30,
+            size: 200,
+            fill: {
+                gradient: ["#fbac24", "#ff871a"]
+            }
+        }).on('circle-animation-progress', function (event, progress) {
+            $(this).find('span').html(Math.round(30 * progress) + '<i>%</i>');
+            $(this).find('span').addClass('percent');
+        });
+    }
 
 
 
