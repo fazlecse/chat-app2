@@ -88,6 +88,7 @@ Typography
     --moderate-lime-green-opacity-low: rgb(77, 163, 78, .1);
     --soft-red-opacity-low: rgba(216, 42, 103, 0.1);
     --bg-color1: #F8F8FA;
+    --bg-color2: #ced0d4;
     --gradient-bg: linear-gradient(90deg, hsl(var(--base)) 0%, hsl(var(--secondary)) 100%);
     --body-color: #1a1a1a;
     --border-color1: rgba(231, 234, 243, .7);
@@ -488,7 +489,7 @@ body {
     line-height: 1.4;
     color: var(--body-color);
     font-size: 16px;
-    overflow-x: hidden;
+    // overflow-x: hidden;
     background-color: var(--white);
 }
 
@@ -1700,10 +1701,12 @@ Offcanvas end
     text-transform: capitalize;
     font-family: var(--heading-font);
     gap: 5px;
+    border: 1px solid var(--primary-color);
 
     &:hover {
         color: var(--white);
         background: var(--btn-hover-bg);
+        border: 1px solid var(--primary-color);
     }
 
 }
@@ -2145,7 +2148,7 @@ section {
             display: flex;
             align-items: center;
             justify-content: center;
-            background: var(--bg-color1);
+            background: var(--white);
             color: var(--primary-color);
             box-shadow: var(--shadow1);
             border: 1px solid var(--border-color2);
@@ -2153,7 +2156,7 @@ section {
 
             &:hover {
                 background-color: var(--primary-color);
-                color: hsl(var(--white));
+                color: var(--white);
             }
         }
     }
@@ -3198,8 +3201,8 @@ Payment section end
     label {
         cursor: pointer;
         text-indent: -9999px;
-        width: 70px;
-        height: 35px;
+        width: 60px;
+        height: 30px;
         background: var(--primary-color);
         display: block;
         border-radius: 100px;
@@ -3211,8 +3214,8 @@ Payment section end
         position: absolute;
         top: 5px;
         left: 5px;
-        width: 25px;
-        height: 25px;
+        width: 20px;
+        height: 20px;
         background: var(--white);
         border-radius: 90px;
         transition: 0.3s;
@@ -3235,7 +3238,6 @@ Payment section end
         &.active {
             color: var(--primary-color);
         }
-
     }
 
 
@@ -3248,6 +3250,12 @@ Payment section end
 @media (min-width: 1600px) {
     .custom-container {
         max-width: 1600px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .custom-container2 {
+        max-width: 1450px;
     }
 }
 
@@ -3274,7 +3282,7 @@ Payment section end
         mask-position: right center;
         -webkit-mask-repeat: no-repeat;
         mask-repeat: no-repeat;
-        background-color: var(--bg-color1);
+        background-color: var(--bg-color2);
     }
 
     &::after {
@@ -3286,12 +3294,12 @@ Payment section end
         mask-position: right center;
         -webkit-mask-repeat: no-repeat;
         mask-repeat: no-repeat;
-        background-color: #ced0d4;
+        background-color: var(--bg-color2);
     }
 
     .item {
         padding: 12px 70px;
-        background-color: #ced0d4;
+        background-color: var(--bg-color2);
         text-align: center;
         text-transform: capitalize;
         font-size: 20px;
@@ -3304,8 +3312,14 @@ Payment section end
         position: relative;
         border-top-right-radius: 5px;
 
+        &:first-child {
+            border-top-left-radius: 15px;
+            border-top-right-radius: 0;
+        }
+
         img {
             width: 36px;
+            min-width: 36px;
         }
 
         .active-img {
@@ -3319,8 +3333,6 @@ Payment section end
         &.active {
             background-color: var(--bg-color1);
             color: rgb(var(--heading-color-rgb));
-            border-top-left-radius: 15px;
-            border-top-right-radius: 0;
 
             .active-img {
                 display: block;
@@ -3333,6 +3345,26 @@ Payment section end
     }
 }
 
+// Responsive page tabs section start
+@media(max-width: 767px) {
+    .page-tabs {
+        &::after {
+            right: -20px;
+        }
+
+        .item {
+            padding: 8px 20px;
+            font-size: 14px;
+
+            img {
+                width: 25px;
+                min-width: 25px;
+            }
+        }
+    }
+}
+
+// Responsive page tabs section end
 // Page tabs end
 /*----------------------------------------------
 Reusable style section end
@@ -4053,6 +4085,8 @@ Feature section end
 05. About section start
 ----------------------------------------------*/
 .about-section {
+    overflow-x: hidden;
+
     .container {
         position: relative;
 
@@ -4115,6 +4149,7 @@ Chat capabilities end
 Customer satisfaction section start 
 ----------------------------------------------*/
 .customer-satisfaction {
+    overflow-x: hidden;
 
     .container {
         position: relative;
@@ -4204,6 +4239,7 @@ Statisfics section start
 
     .cmn-tab-content {
         position: relative;
+        overflow-x: hidden;
 
         &::after {
             content: "";
@@ -4554,6 +4590,7 @@ Posts page end
 
     .box-top {
         display: flex;
+
     }
 
     .price-box {
@@ -4736,6 +4773,7 @@ Business pricing section start
         background-color: #07b65d;
         position: relative;
         z-index: 0;
+        overflow: hidden;
 
         &::after {
             content: "";
@@ -4827,6 +4865,12 @@ Business pricing section start
     }
 }
 
+@media(max-width: 575px) {
+    .pricing-box3 {
+        flex-direction: column;
+    }
+}
+
 // Business responsive secdtion end
 /*----------------------------------------------
 Business pricing section end
@@ -4838,27 +4882,280 @@ Compare pricing section start
 .compare-pricing-box {
     .box-top {
         display: flex;
+        position: sticky;
+        top: 80px;
+        background-color: var(--white);
+        z-index: 9;
 
         .item {
-            width: 18.5%;
-            border: 1px solid var(--border-color2);
+
+            .img-box {
+                width: 60px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            &:not(:first-child) {
+                width: 18.5%;
+                border: 1px solid var(--border-color1);
+                padding: 30px 20px 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
 
             &:first-child {
                 width: 26%;
-                border: none;
+                display: flex;
+                align-items: end;
+                padding-bottom: 25px;
+            }
+
+            &:nth-child(2) {
+                border-top-left-radius: 20px;
+            }
+
+            &:not(:nth-child(2)) {
+                border-left: none;
+            }
+
+            &:last-child {
+                border-top-right-radius: 20px;
+            }
+        }
+
+        .title {
+            font-size: 21px;
+            font-family: var(--heading-font);
+            font-weight: 700;
+            margin-top: 20px;
+
+            small {
+                font-size: 14px;
+            }
+        }
+
+        .price-title {
+            font-size: 18px;
+            // font-family: var(--heading-font);
+            font-weight: 600;
+
+            sup {
+                top: -6px;
+                font-size: 12px;
+                margin-right: -4px;
+            }
+
+            small {
+                margin-left: -4px;
+                font-size: 14px;
+                font-weight: 500;
+            }
+        }
+
+        .price-title2 {
+            font-size: 15px;
+            // font-family: var(--heading-font);
+            font-weight: 600;
+
+            sup {
+                top: -6px;
+                font-size: 10px;
+                margin-right: -4px;
+            }
+
+            small {
+                margin-left: -3px;
+                font-size: 12px;
+                font-weight: 500;
+            }
+        }
+
+        .switcher {
+            padding: 0;
+
+            .support-btn {
+                font-size: 14px;
+            }
+        }
+
+    }
+
+    .box-bottom-item {
+        .accordion-button {
+            background-color: var(--bg-color2);
+            box-shadow: none;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 10px 14px;
+            border-bottom: 1px solid var(--border-color1);
+
+            &:not(.collapsed) {
+                background-color: var(--bg-color2);
+                color: var(--heading-color);
+
+                &::after {
+                    background-image: var(--bs-accordion-btn-icon);
+                }
+            }
+        }
+
+        .accordion-item {
+            border: none;
+
+            &:first-of-type {
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+
+                .accordion-button {
+                    border-top-left-radius: 0;
+                    border-top-right-radius: 0;
+                }
+            }
+
+            &:last-of-type {
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+
+                .accordion-button {
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 0;
+                }
+            }
+        }
+
+        .accordion-body {
+            padding: 0;
+        }
+
+    }
+
+    .table {
+        margin-bottom: 0;
+
+        td {
+            width: 18.5%;
+            border-left: 1px solid transparent;
+            border-right: 1px solid var(--border-color1);
+
+            &:first-of-type {
+                width: 26%;
+            }
+
+            &:not(:first-of-type) {
+                text-align: center;
+            }
+
+            .icon {
+                color: var(--primary-color);
             }
         }
     }
 
-    .switcher {
-        padding: 0;
+    .table>:not(caption)>*>* {
+        padding: 6px 12px;
+        background-color: var(--bg-color1);
+        border-bottom: 1px dashed var(--border-color2);
+    }
 
-        .support-btn {
-            font-size: 14px;
+    .table-striped>tbody>tr:nth-of-type(odd)>* {
+        --bs-table-accent-bg: var(--white);
+
+    }
+}
+
+// Responsive compare pricing section start
+@media(max-width: 1199px) {
+    .compare-pricing-section {
+        .container {
+            max-width: 100%;
         }
     }
 }
 
+@media(max-width: 991px) {
+    .compare-pricing-box {
+        .box-top {
+            .item {
+                &:first-child {
+                    display: none;
+                }
+
+                &:not(:first-child) {
+                    width: 25%;
+                }
+
+                .price-title,
+                .price-title2 {
+                    display: none;
+                }
+            }
+
+        }
+
+        .table {
+            tr {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            td {
+                width: 25%;
+
+                &:first-of-type {
+                    width: 100%;
+                    --bs-table-accent-bg: var(--bg-color1) !important;
+                }
+            }
+        }
+
+        .table> :not(caption)>*>* {
+            background-color: var(--white);
+        }
+    }
+
+}
+
+@media(max-width: 767px) {
+    .compare-pricing-box {
+        .box-top {
+            top: 70px;
+
+            .item {
+
+                .cmn-btn,
+                .cmn-btn5 {
+                    display: none;
+                }
+            }
+
+        }
+    }
+
+}
+
+@media(max-width: 575px) {
+    .compare-pricing-box {
+        .box-top {
+            .title {
+                font-size: 14px;
+
+                small {
+                    font-size: 12px;
+                }
+            }
+
+            .item:not(:first-child) {
+                padding: 10px;
+            }
+        }
+    }
+}
+
+// Responsive compare pricing section end
 /*----------------------------------------------
 Compare pricing section end
 ----------------------------------------------*/
@@ -5653,95 +5950,78 @@ Banner end
 ----------------------------------------------*/
 
 
+
 /*----------------------------------------------
-22. Contact section start
+24. Contact section start
 ----------------------------------------------*/
 .contact-section {
-    background-color: var(--bg-color1);
+    position: relative;
+    z-index: 0;
+}
 
-    .contact-message-area {
+.contact-area {
+    padding: 20px;
 
-        .contact-header {
-            margin-bottom: 30px;
-        }
-
-        .form-label {
-            text-transform: capitalize;
-
-            h5 {
-                font-weight: 600;
-            }
-        }
-
-
+    .thumbs-area {
+        max-width: 250px;
+        margin: auto;
     }
+}
 
-    .contact-area {
-        .thumbs-area {
-            max-width: 500px;
-            margin: auto;
-        }
+.contact-item-list {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 
-        .contact-list {
-            margin-top: 50px;
+    .item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        border: 1px solid var(--border-color1);
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: var(--shadow1);
+        background-color: var(--white);
+
+        .icon-area {
+            border-radius: 5px;
+            width: 40px;
+            height: 40px;
+            font-size: 18px;
+            color: var(--primary-color);
+            background-color: hsl(var(--base)/ 0.1);
             display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-
-            .item {
-                display: flex;
-                align-items: center;
-                gap: 15px;
-
-                .icon-area {
-                    width: 40px;
-                    height: 40px;
-                    background-color: var(--primary-color-opacity-low);
-                    border-radius: 5px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    color: var(--primary-color);
-                }
-            }
-        }
-    }
-}
-
-// Contact responsive start
-
-
-// Contact responsive end
-
-// Rtl contact section start 
-.rtl {
-    .contact-section {
-        .contact-area {
-            padding: 30px 30px 30px 10px;
-            border-radius: 0 10px 10px 0;
-        }
-
-        .contact-message-area {
-            padding: 30px 10px 30px 30px;
-        }
-    }
-
-    @media (max-width: 991px) {
-        .contact-section {
-            .contact-area {
-                padding: 20px;
-                border-radius: 10px 10px 0 0;
-            }
-
-            .contact-message-area {
-                padding: 20px;
-            }
+            align-items: center;
+            justify-content: center;
         }
 
     }
 }
 
-// Rtl contact section end
+.contact-message-area {
+    background-color: var(--white);
+    padding: 30px 25px;
+    box-shadow: var(--shadow1);
+    border-radius: 20px;
+    border: 1px solid var(--border-color1);
+
+    .contact-header {
+        margin-bottom: 30px;
+    }
+
+    .btn-area {
+        margin-top: 30px;
+    }
+
+    .form-label {
+        text-transform: capitalize;
+
+        h5 {
+            font-weight: 600;
+        }
+    }
+}
 
 /*----------------------------------------------
 Contact end
@@ -5782,7 +6062,7 @@ Map section end
     .login-signup-form {
         padding: 30px;
         background-color: var(--white);
-        border-radius: 5px;
+        border-radius: 15px;
         z-index: 1;
         position: relative;
 

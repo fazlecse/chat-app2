@@ -82,6 +82,7 @@ Typography
   --moderate-lime-green-opacity-low: rgb(77, 163, 78, .1);
   --soft-red-opacity-low: rgba(216, 42, 103, 0.1);
   --bg-color1: #F8F8FA;
+  --bg-color2: #ced0d4;
   --gradient-bg: linear-gradient(90deg, hsl(var(--base)) 0%, hsl(var(--secondary)) 100%);
   --body-color: #1a1a1a;
   --border-color1: rgba(231, 234, 243, .7);
@@ -427,7 +428,6 @@ body {
   line-height: 1.4;
   color: var(--body-color);
   font-size: 16px;
-  overflow-x: hidden;
   background-color: var(--white);
 }
 
@@ -1397,10 +1397,12 @@ Offcanvas end
   text-transform: capitalize;
   font-family: var(--heading-font);
   gap: 5px;
+  border: 1px solid var(--primary-color);
 }
 .cmn-btn:hover {
   color: var(--white);
   background: var(--btn-hover-bg);
+  border: 1px solid var(--primary-color);
 }
 
 .cmn-btn2 {
@@ -1776,7 +1778,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--bg-color1);
+  background: var(--white);
   color: var(--primary-color);
   box-shadow: var(--shadow1);
   border: 1px solid var(--border-color2);
@@ -1784,7 +1786,7 @@ section {
 }
 .social-box li a:hover {
   background-color: var(--primary-color);
-  color: hsl(var(--white));
+  color: var(--white);
 }
 
 .star ul li i {
@@ -2592,8 +2594,8 @@ Payment section end
 .switcher label {
   cursor: pointer;
   text-indent: -9999px;
-  width: 70px;
-  height: 35px;
+  width: 60px;
+  height: 30px;
   background: var(--primary-color);
   display: block;
   border-radius: 100px;
@@ -2604,8 +2606,8 @@ Payment section end
   position: absolute;
   top: 5px;
   left: 5px;
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   background: var(--white);
   border-radius: 90px;
   transition: 0.3s;
@@ -2631,6 +2633,11 @@ Payment section end
     max-width: 1600px;
   }
 }
+@media (min-width: 1600px) {
+  .custom-container2 {
+    max-width: 1450px;
+  }
+}
 .page-tabs {
   display: inline-flex;
   position: relative;
@@ -2651,7 +2658,7 @@ Payment section end
   mask-position: right center;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
-  background-color: var(--bg-color1);
+  background-color: var(--bg-color2);
 }
 .page-tabs::after {
   right: -32px;
@@ -2663,11 +2670,11 @@ Payment section end
   mask-position: right center;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
-  background-color: #ced0d4;
+  background-color: var(--bg-color2);
 }
 .page-tabs .item {
   padding: 12px 70px;
-  background-color: #ced0d4;
+  background-color: var(--bg-color2);
   text-align: center;
   text-transform: capitalize;
   font-size: 20px;
@@ -2680,8 +2687,13 @@ Payment section end
   position: relative;
   border-top-right-radius: 5px;
 }
+.page-tabs .item:first-child {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 0;
+}
 .page-tabs .item img {
   width: 36px;
+  min-width: 36px;
 }
 .page-tabs .item .active-img {
   display: none;
@@ -2692,8 +2704,6 @@ Payment section end
 .page-tabs .item.active {
   background-color: var(--bg-color1);
   color: rgb(var(--heading-color-rgb));
-  border-top-left-radius: 15px;
-  border-top-right-radius: 0;
 }
 .page-tabs .item.active .active-img {
   display: block;
@@ -2702,6 +2712,19 @@ Payment section end
   display: none;
 }
 
+@media (max-width: 767px) {
+  .page-tabs::after {
+    right: -20px;
+  }
+  .page-tabs .item {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+  .page-tabs .item img {
+    width: 25px;
+    min-width: 25px;
+  }
+}
 /*----------------------------------------------
 Reusable style section end
 ----------------------------------------------*/
@@ -3310,6 +3333,9 @@ Feature section end
 /*----------------------------------------------
 05. About section start
 ----------------------------------------------*/
+.about-section {
+  overflow-x: hidden;
+}
 .about-section .container {
   position: relative;
 }
@@ -3358,6 +3384,9 @@ Chat capabilities end
 /*----------------------------------------------
 Customer satisfaction section start 
 ----------------------------------------------*/
+.customer-satisfaction {
+  overflow-x: hidden;
+}
 .customer-satisfaction .container {
   position: relative;
 }
@@ -3431,6 +3460,7 @@ Statisfics section start
 ----------------------------------------------*/
 .statistics-section .cmn-tab-content {
   position: relative;
+  overflow-x: hidden;
 }
 .statistics-section .cmn-tab-content::after {
   content: "";
@@ -3866,6 +3896,7 @@ Business pricing section start
   background-color: #07b65d;
   position: relative;
   z-index: 0;
+  overflow: hidden;
 }
 .pricing-box3.deal-startup::after {
   content: "";
@@ -3934,6 +3965,11 @@ Business pricing section start
     text-align: right;
   }
 }
+@media (max-width: 575px) {
+  .pricing-box3 {
+    flex-direction: column;
+  }
+}
 /*----------------------------------------------
 Business pricing section end
 ----------------------------------------------*/
@@ -3942,22 +3978,198 @@ Compare pricing section start
 ----------------------------------------------*/
 .compare-pricing-box .box-top {
   display: flex;
+  position: sticky;
+  top: 80px;
+  background-color: var(--white);
+  z-index: 9;
 }
-.compare-pricing-box .box-top .item {
+.compare-pricing-box .box-top .item .img-box {
+  width: 60px;
+}
+.compare-pricing-box .box-top .item .img-box img {
+  width: 100%;
+  height: 100%;
+}
+.compare-pricing-box .box-top .item:not(:first-child) {
   width: 18.5%;
-  border: 1px solid var(--border-color2);
+  border: 1px solid var(--border-color1);
+  padding: 30px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .compare-pricing-box .box-top .item:first-child {
   width: 26%;
-  border: none;
+  display: flex;
+  align-items: end;
+  padding-bottom: 25px;
 }
-.compare-pricing-box .switcher {
-  padding: 0;
+.compare-pricing-box .box-top .item:nth-child(2) {
+  border-top-left-radius: 20px;
 }
-.compare-pricing-box .switcher .support-btn {
+.compare-pricing-box .box-top .item:not(:nth-child(2)) {
+  border-left: none;
+}
+.compare-pricing-box .box-top .item:last-child {
+  border-top-right-radius: 20px;
+}
+.compare-pricing-box .box-top .title {
+  font-size: 21px;
+  font-family: var(--heading-font);
+  font-weight: 700;
+  margin-top: 20px;
+}
+.compare-pricing-box .box-top .title small {
   font-size: 14px;
 }
+.compare-pricing-box .box-top .price-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+.compare-pricing-box .box-top .price-title sup {
+  top: -6px;
+  font-size: 12px;
+  margin-right: -4px;
+}
+.compare-pricing-box .box-top .price-title small {
+  margin-left: -4px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.compare-pricing-box .box-top .price-title2 {
+  font-size: 15px;
+  font-weight: 600;
+}
+.compare-pricing-box .box-top .price-title2 sup {
+  top: -6px;
+  font-size: 10px;
+  margin-right: -4px;
+}
+.compare-pricing-box .box-top .price-title2 small {
+  margin-left: -3px;
+  font-size: 12px;
+  font-weight: 500;
+}
+.compare-pricing-box .box-top .switcher {
+  padding: 0;
+}
+.compare-pricing-box .box-top .switcher .support-btn {
+  font-size: 14px;
+}
+.compare-pricing-box .box-bottom-item .accordion-button {
+  background-color: var(--bg-color2);
+  box-shadow: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border-color1);
+}
+.compare-pricing-box .box-bottom-item .accordion-button:not(.collapsed) {
+  background-color: var(--bg-color2);
+  color: var(--heading-color);
+}
+.compare-pricing-box .box-bottom-item .accordion-button:not(.collapsed)::after {
+  background-image: var(--bs-accordion-btn-icon);
+}
+.compare-pricing-box .box-bottom-item .accordion-item {
+  border: none;
+}
+.compare-pricing-box .box-bottom-item .accordion-item:first-of-type {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.compare-pricing-box .box-bottom-item .accordion-item:first-of-type .accordion-button {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.compare-pricing-box .box-bottom-item .accordion-item:last-of-type {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.compare-pricing-box .box-bottom-item .accordion-item:last-of-type .accordion-button {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.compare-pricing-box .box-bottom-item .accordion-body {
+  padding: 0;
+}
+.compare-pricing-box .table {
+  margin-bottom: 0;
+}
+.compare-pricing-box .table td {
+  width: 18.5%;
+  border-left: 1px solid transparent;
+  border-right: 1px solid var(--border-color1);
+}
+.compare-pricing-box .table td:first-of-type {
+  width: 26%;
+}
+.compare-pricing-box .table td:not(:first-of-type) {
+  text-align: center;
+}
+.compare-pricing-box .table td .icon {
+  color: var(--primary-color);
+}
+.compare-pricing-box .table > :not(caption) > * > * {
+  padding: 6px 12px;
+  background-color: var(--bg-color1);
+  border-bottom: 1px dashed var(--border-color2);
+}
+.compare-pricing-box .table-striped > tbody > tr:nth-of-type(odd) > * {
+  --bs-table-accent-bg: var(--white);
+}
 
+@media (max-width: 1199px) {
+  .compare-pricing-section .container {
+    max-width: 100%;
+  }
+}
+@media (max-width: 991px) {
+  .compare-pricing-box .box-top .item:first-child {
+    display: none;
+  }
+  .compare-pricing-box .box-top .item:not(:first-child) {
+    width: 25%;
+  }
+  .compare-pricing-box .box-top .item .price-title,
+  .compare-pricing-box .box-top .item .price-title2 {
+    display: none;
+  }
+  .compare-pricing-box .table tr {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .compare-pricing-box .table td {
+    width: 25%;
+  }
+  .compare-pricing-box .table td:first-of-type {
+    width: 100%;
+    --bs-table-accent-bg: var(--bg-color1) !important;
+  }
+  .compare-pricing-box .table > :not(caption) > * > * {
+    background-color: var(--white);
+  }
+}
+@media (max-width: 767px) {
+  .compare-pricing-box .box-top {
+    top: 70px;
+  }
+  .compare-pricing-box .box-top .item .cmn-btn,
+  .compare-pricing-box .box-top .item .cmn-btn5 {
+    display: none;
+  }
+}
+@media (max-width: 575px) {
+  .compare-pricing-box .box-top .title {
+    font-size: 14px;
+  }
+  .compare-pricing-box .box-top .title small {
+    font-size: 12px;
+  }
+  .compare-pricing-box .box-top .item:not(:first-child) {
+    padding: 10px;
+  }
+}
 /*----------------------------------------------
 Compare pricing section end
 ----------------------------------------------*/
@@ -4535,61 +4747,67 @@ Copyright end
 Banner end
 ----------------------------------------------*/
 /*----------------------------------------------
-22. Contact section start
+24. Contact section start
 ----------------------------------------------*/
 .contact-section {
-  background-color: var(--bg-color1);
+  position: relative;
+  z-index: 0;
 }
-.contact-section .contact-message-area .contact-header {
-  margin-bottom: 30px;
+
+.contact-area {
+  padding: 20px;
 }
-.contact-section .contact-message-area .form-label {
-  text-transform: capitalize;
-}
-.contact-section .contact-message-area .form-label h5 {
-  font-weight: 600;
-}
-.contact-section .contact-area .thumbs-area {
-  max-width: 500px;
+.contact-area .thumbs-area {
+  max-width: 250px;
   margin: auto;
 }
-.contact-section .contact-area .contact-list {
-  margin-top: 50px;
+
+.contact-item-list {
+  margin-top: 30px;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 30px;
 }
-.contact-section .contact-area .contact-list .item {
+.contact-item-list .item {
   display: flex;
   align-items: center;
   gap: 15px;
+  border: 1px solid var(--border-color1);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: var(--shadow1);
+  background-color: var(--white);
 }
-.contact-section .contact-area .contact-list .item .icon-area {
+.contact-item-list .item .icon-area {
+  border-radius: 5px;
   width: 40px;
   height: 40px;
-  background-color: var(--primary-color-opacity-low);
-  border-radius: 5px;
+  font-size: 18px;
+  color: var(--primary-color);
+  background-color: hsl(var(--base)/0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--primary-color);
 }
 
-.rtl .contact-section .contact-area {
-  padding: 30px 30px 30px 10px;
-  border-radius: 0 10px 10px 0;
+.contact-message-area {
+  background-color: var(--white);
+  padding: 30px 25px;
+  box-shadow: var(--shadow1);
+  border-radius: 20px;
+  border: 1px solid var(--border-color1);
 }
-.rtl .contact-section .contact-message-area {
-  padding: 30px 10px 30px 30px;
+.contact-message-area .contact-header {
+  margin-bottom: 30px;
 }
-@media (max-width: 991px) {
-  .rtl .contact-section .contact-area {
-    padding: 20px;
-    border-radius: 10px 10px 0 0;
-  }
-  .rtl .contact-section .contact-message-area {
-    padding: 20px;
-  }
+.contact-message-area .btn-area {
+  margin-top: 30px;
+}
+.contact-message-area .form-label {
+  text-transform: capitalize;
+}
+.contact-message-area .form-label h5 {
+  font-weight: 600;
 }
 
 /*----------------------------------------------
@@ -4625,7 +4843,7 @@ Map section end
 .login-signup-page .login-signup-form {
   padding: 30px;
   background-color: var(--white);
-  border-radius: 5px;
+  border-radius: 15px;
   z-index: 1;
   position: relative;
 }
