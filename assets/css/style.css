@@ -795,17 +795,17 @@ body::-webkit-scrollbar-thumb:hover {
 .owl-theme .owl-dots .owl-dot span {
   width: 10px;
   height: 5px;
-  background: rgb(var(--primary-color));
+  background: var(--primary-color);
 }
 
 .owl-theme .owl-dots .owl-dot.active span,
 .owl-theme .owl-dots .owl-dot:hover span {
-  background: rgb(var(--primary-color));
+  background: var(--primary-color);
 }
 
 .owl-theme .owl-dots .owl-dot.active span,
 .owl-theme .owl-dots span {
-  background: rgb(var(--primary-color));
+  background: var(--primary-color);
   width: 30px;
   height: 5px;
 }
@@ -959,6 +959,28 @@ Reusable style section start
   border: 1px solid var(--border-color1);
 }
 
+@media (max-width: 767px) {
+  .language-box-large .dropdown-menu-end[data-bs-popper] {
+    right: -55px;
+  }
+}
+@media (max-width: 575px) {
+  .language-box-large .region-container {
+    width: 280px;
+  }
+  .language-box-large .dropdown-menu {
+    padding: 20px 10px;
+  }
+  .language-box-large .region-box-large {
+    width: 50%;
+  }
+  .language-box-large .region-box-large .region-list .item {
+    width: 100%;
+  }
+  .language-box-large .region-box-small {
+    width: 50%;
+  }
+}
 .cmn-box-item:nth-child(2) .cmn-box .icon-area {
   color: var(--moderate-lime-green);
   background-color: var(--moderate-lime-green-opacity-low);
@@ -1397,12 +1419,12 @@ Offcanvas end
   text-transform: capitalize;
   font-family: var(--heading-font);
   gap: 5px;
-  border: 1px solid var(--primary-color);
+  border: 1px solid transparent;
 }
 .cmn-btn:hover {
   color: var(--white);
   background: var(--btn-hover-bg);
-  border: 1px solid var(--primary-color);
+  border: 1px solid transparent;
 }
 
 .cmn-btn2 {
@@ -2642,36 +2664,6 @@ Payment section end
   display: inline-flex;
   position: relative;
 }
-.page-tabs::before, .page-tabs::after {
-  position: absolute;
-  content: "";
-  width: 48px;
-  height: 100%;
-}
-.page-tabs::before {
-  left: -32px;
-  -webkit-mask-image: url(../img/pricing-plan/download.svg);
-  mask-image: url(../img/pricing-plan/download.svg);
-  -webkit-mask-size: auto 100%;
-          mask-size: auto 100%;
-  -webkit-mask-position: right center;
-  mask-position: right center;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  background-color: var(--bg-color2);
-}
-.page-tabs::after {
-  right: -32px;
-  -webkit-mask-image: url(../img/pricing-plan/download2.svg);
-  mask-image: url(../img/pricing-plan/download2.svg);
-  -webkit-mask-size: auto 100%;
-          mask-size: auto 100%;
-  -webkit-mask-position: right center;
-  mask-position: right center;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  background-color: var(--bg-color2);
-}
 .page-tabs .item {
   padding: 12px 70px;
   background-color: var(--bg-color2);
@@ -2687,9 +2679,39 @@ Payment section end
   position: relative;
   border-top-right-radius: 5px;
 }
+.page-tabs .item::before, .page-tabs .item::after {
+  position: absolute;
+  content: "";
+  width: 48px;
+  height: 100%;
+}
 .page-tabs .item:first-child {
   border-top-left-radius: 15px;
   border-top-right-radius: 0;
+}
+.page-tabs .item:first-child::before {
+  left: -32px;
+  -webkit-mask-image: url(../img/pricing-plan/download.svg);
+  mask-image: url(../img/pricing-plan/download.svg);
+  -webkit-mask-size: auto 100%;
+          mask-size: auto 100%;
+  -webkit-mask-position: right center;
+  mask-position: right center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  background-color: var(--bg-color2);
+}
+.page-tabs .item:last-child::after {
+  right: -32px;
+  -webkit-mask-image: url(../img/pricing-plan/download2.svg);
+  mask-image: url(../img/pricing-plan/download2.svg);
+  -webkit-mask-size: auto 100%;
+          mask-size: auto 100%;
+  -webkit-mask-position: right center;
+  mask-position: right center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  background-color: var(--bg-color2);
 }
 .page-tabs .item img {
   width: 36px;
@@ -2704,6 +2726,12 @@ Payment section end
 .page-tabs .item.active {
   background-color: var(--bg-color1);
   color: rgb(var(--heading-color-rgb));
+}
+.page-tabs .item.active:first-child::before {
+  background-color: var(--bg-color1);
+}
+.page-tabs .item.active:last-child::after {
+  background-color: var(--bg-color1);
 }
 .page-tabs .item.active .active-img {
   display: block;
@@ -2723,6 +2751,9 @@ Payment section end
   .page-tabs .item img {
     width: 25px;
     min-width: 25px;
+  }
+  .page-tabs .item:last-child::after {
+    right: -20px;
   }
 }
 /*----------------------------------------------
@@ -3084,9 +3115,6 @@ Padding bottom
   background-color: transparent;
 }
 
-/*----------------------------------------------
-user nav Profile start
-----------------------------------------------*/
 .profile-box {
   position: relative;
   display: inline-block;
@@ -3186,9 +3214,6 @@ user nav Profile start
   }
 }
 
-/*----------------------------------------------
-user nav Profile end
-----------------------------------------------*/
 @media (min-width: 992px) {
   .navbar-expand-lg .navbar-toggler {
     display: none !important;
@@ -3221,6 +3246,14 @@ user nav Profile end
   }
   .navbar .nav-right .custom-nav {
     gap: 5px;
+  }
+}
+@media (max-width: 575px) {
+  .navbar .nav-right .custom-nav .nav-item .nav-link {
+    padding: 0;
+  }
+  .language-box-large .cmn-dropdown-toggle {
+    padding: 0;
   }
 }
 .rtl .navbar-nav.ms-auto {
@@ -3334,7 +3367,7 @@ Feature section end
 05. About section start
 ----------------------------------------------*/
 .about-section {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 .about-section .container {
   position: relative;
@@ -3359,6 +3392,12 @@ Feature section end
   width: 100%;
 }
 
+@media (max-width: 991px) {
+  .about-section .container::after {
+    height: calc(100% + 50px);
+    width: calc(100% + 50px);
+  }
+}
 @media (max-width: 767px) {
   .about-section {
     text-align: center;
@@ -3385,7 +3424,7 @@ Chat capabilities end
 Customer satisfaction section start 
 ----------------------------------------------*/
 .customer-satisfaction {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 .customer-satisfaction .container {
   position: relative;
@@ -3403,6 +3442,15 @@ Customer satisfaction section start
   border-radius: 20px;
 }
 
+@media (max-width: 991px) {
+  .customer-satisfaction .container::after {
+    height: calc(100% + 50px);
+    width: calc(100% + 50px);
+  }
+}
+/*----------------------------------------------
+Customer satisfaction section end 
+----------------------------------------------*/
 /*----------------------------------------------
 Flexible chat section start
 ----------------------------------------------*/
@@ -3413,8 +3461,8 @@ Flexible chat section start
   background-size: cover;
   background-position: center;
   height: 100%;
-  width: calc(100% - 100px);
-  min-height: 600px;
+  width: calc(100% - 40px);
+  min-height: 450px;
   border-top-right-radius: 100px;
   border-bottom-right-radius: 100px;
   position: relative;
@@ -3440,7 +3488,7 @@ Flexible chat section start
   max-width: 650px;
   margin-left: auto;
   text-align: right;
-  padding-right: 100px;
+  padding-right: 60px;
 }
 .flexible-chat-section .left-side .text-box h2 {
   color: var(--secondary-color);
@@ -3452,15 +3500,50 @@ Flexible chat section start
   max-width: 600px;
 }
 
+@media (min-width: 1200px) {
+  .flexible-chat-section .left-side {
+    min-height: 600px;
+    width: calc(100% - 60px);
+  }
+  .flexible-chat-section .left-side .text-box {
+    padding-right: 100px;
+  }
+}
+@media (max-width: 767px) {
+  .flexible-chat-section .right-side {
+    margin: auto;
+    text-align: center;
+  }
+  .flexible-chat-section .left-side {
+    border-radius: 30px;
+    width: 100%;
+    min-height: 300px;
+  }
+  .flexible-chat-section .left-side::after {
+    border-radius: 30px;
+  }
+  .flexible-chat-section .left-side .text-box {
+    text-align: center;
+    margin: 0 auto;
+    padding-right: 0;
+  }
+  .flexible-chat-section .left-side .video-play-btn {
+    top: calc(100% - 50px);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
 /*----------------------------------------------
 Flexible chat section end 
 ----------------------------------------------*/
 /*----------------------------------------------
 Statisfics section start
 ----------------------------------------------*/
+.statistics-section {
+  overflow: hidden;
+}
 .statistics-section .cmn-tab-content {
   position: relative;
-  overflow-x: hidden;
 }
 .statistics-section .cmn-tab-content::after {
   content: "";
@@ -3502,6 +3585,11 @@ Statisfics section start
   margin-top: 20px;
 }
 
+@media (max-width: 767px) {
+  .statistics-section .cmn-tab-content {
+    text-align: center;
+  }
+}
 /*----------------------------------------------
 Statisfics section end
 ----------------------------------------------*/
@@ -3729,10 +3817,6 @@ Posts page end
   flex-wrap: wrap;
 }
 
-.pricing-box:last-child {
-  margin-left: 100px;
-}
-
 .pricing-box:nth-child(-n+2) {
   border-right: 1px solid var(--border-color2);
 }
@@ -3817,9 +3901,12 @@ Posts page end
   margin-bottom: 10px;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 768px) {
   .pricing-box {
     max-width: 300px;
+  }
+  .pricing-box:last-child {
+    margin-left: 100px;
   }
 }
 /*----------------------------------------------
@@ -3983,6 +4070,9 @@ Compare pricing section start
   background-color: var(--white);
   z-index: 9;
 }
+.compare-pricing-box .box-top .item {
+  border-bottom: 1px solid var(--border-color1);
+}
 .compare-pricing-box .box-top .item .img-box {
   width: 60px;
 }
@@ -4118,6 +4208,18 @@ Compare pricing section start
 .compare-pricing-box .table-striped > tbody > tr:nth-of-type(odd) > * {
   --bs-table-accent-bg: var(--white);
 }
+.compare-pricing-box.enterprise .box-top .item:first-child {
+  width: 30%;
+}
+.compare-pricing-box.enterprise .box-top .item:not(:first-child) {
+  width: 35%;
+}
+.compare-pricing-box.enterprise .table td {
+  width: 35%;
+}
+.compare-pricing-box.enterprise .table td:first-of-type {
+  width: 30%;
+}
 
 @media (max-width: 1199px) {
   .compare-pricing-section .container {
@@ -4149,6 +4251,15 @@ Compare pricing section start
   .compare-pricing-box .table > :not(caption) > * > * {
     background-color: var(--white);
   }
+  .compare-pricing-box.enterprise .box-top .item:not(:first-child) {
+    width: 50%;
+  }
+  .compare-pricing-box.enterprise .table td {
+    width: 50%;
+  }
+  .compare-pricing-box.enterprise .table td:first-of-type {
+    width: 100%;
+  }
 }
 @media (max-width: 767px) {
   .compare-pricing-box .box-top {
@@ -4172,6 +4283,155 @@ Compare pricing section start
 }
 /*----------------------------------------------
 Compare pricing section end
+----------------------------------------------*/
+/*----------------------------------------------
+Enterprise pricing section end
+----------------------------------------------*/
+.enterprise-pricing-section {
+  background-color: var(--bg-color1);
+}
+
+.enterprise-pricing-box {
+  display: flex;
+  justify-content: space-between;
+  row-gap: 20px;
+}
+
+.enterprise-pricing-item {
+  padding: 40px;
+  background-color: var(--white);
+  border-radius: 20px;
+}
+.enterprise-pricing-item h4 {
+  font-size: 22px;
+}
+.enterprise-pricing-item:last-child .box-top {
+  display: flex;
+  justify-content: space-between;
+}
+.enterprise-pricing-item:last-child .box-top .img-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.enterprise-pricing-item:last-child .box-top .img-box img {
+  width: 240px;
+}
+.enterprise-pricing-item .cmn-list {
+  gap: 25px;
+}
+.enterprise-pricing-item .cmn-list h6 {
+  font-weight: 600;
+}
+.enterprise-pricing-item .price-title {
+  font-size: 40px;
+  font-family: var(--heading-font);
+  font-weight: 600;
+}
+.enterprise-pricing-item .price-title sup {
+  font-size: 16px;
+  top: -18px;
+  left: 8px;
+}
+.enterprise-pricing-item .price-title small {
+  font-size: 24px;
+  margin-left: -8px;
+}
+
+.label-tag {
+  background-color: var(--primary-color-opacity-low);
+  padding: 5px 25px;
+  border-radius: 9999px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.label-tag i {
+  color: var(--primary-color);
+}
+.label-tag.pink {
+  background-color: rgba(180, 75, 133, 0.2);
+  color: #b44b85;
+}
+
+.label-tag-small {
+  background-color: var(--primary-color-opacity-low);
+  padding: 3px 15px;
+  border-radius: 9999px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12px;
+}
+.label-tag-small i {
+  color: var(--primary-color);
+}
+.label-tag-small.pink {
+  background-color: rgba(180, 75, 133, 0.2);
+  color: #b44b85;
+}
+
+.customer-list {
+  display: flex;
+  align-items: center;
+  row-gap: 20px;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  flex-wrap: wrap;
+}
+
+.customer-list-item {
+  filter: brightness(0) opacity(0.18);
+}
+.customer-list-item img {
+  width: auto;
+  height: 20px;
+}
+
+.award-list {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.award-list-item {
+  width: 140px;
+}
+
+@media (min-width: 768px) {
+  .enterprise-pricing-item:last-child .box-top .text-box {
+    width: 50%;
+  }
+  .enterprise-pricing-item:last-child .box-top .img-box {
+    width: 50%;
+  }
+}
+@media (min-width: 992px) {
+  .enterprise-pricing-item:first-child {
+    width: 36.85%;
+  }
+  .enterprise-pricing-item:last-child {
+    width: 62.28%;
+  }
+}
+@media (max-width: 991px) {
+  .enterprise-pricing-box {
+    flex-direction: column;
+  }
+}
+@media (max-width: 767px) {
+  .enterprise-pricing-item {
+    padding: 20px;
+  }
+  .enterprise-pricing-item:last-child .box-top {
+    flex-direction: column;
+    row-gap: 30px;
+  }
+}
+/*----------------------------------------------
+Enterprise pricing section end
 ----------------------------------------------*/
 /*----------------------------------------------
 17. Faq section start
@@ -4308,9 +4568,19 @@ Faq end
     padding: 120px 50px 120px 100px;
   }
 }
+@media (max-width: 1199px) {
+  .testimonial-inner {
+    padding: 20px;
+  }
+}
 @media (max-width: 991px) {
   .testimonial-section .section-header {
     text-align: center;
+  }
+}
+@media (max-width: 575px) {
+  .testimonial-inner {
+    padding: 0;
   }
 }
 @media (min-width: 1400px) {
@@ -4915,7 +5185,9 @@ Login Signup end
   background: var(--bg-color1);
 }
 .blog-details-section .blog-box-large .thumbs-area img {
-  border-radius: 5px;
+  border-radius: 10px;
+  max-height: 450px;
+  width: 100%;
 }
 .blog-details-section .blog-box-large .content-area {
   max-width: 100%;
@@ -4931,7 +5203,6 @@ Login Signup end
   margin: 20px 0;
   position: relative;
   background-color: var(--white);
-  box-shadow: var(--shadow1);
   padding: 25px;
   border-left: 2px solid var(--primary-color);
 }
@@ -4969,8 +5240,7 @@ Login Signup end
   padding: 10px 0;
 }
 .sidebar-categories-area li a {
-  font-size: 18px;
-  font-weight: 400;
+  font-weight: 500;
   display: flex;
   justify-content: space-between;
   color: var(--heading-color);
@@ -5005,9 +5275,8 @@ Login Signup end
 .sidebar-widget-area {
   padding: 25px;
   background-color: var(--white);
-  border-radius: 5px;
+  border-radius: 10px;
   margin-bottom: 30px;
-  box-shadow: var(--shadow1);
 }
 .sidebar-widget-area .title {
   margin-bottom: 5px;
