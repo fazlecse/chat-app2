@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CoinMingle</title>
+    <!-- Favicon-link -->
+    <link rel="shortcut icon" href="assets/img/logo/favicon.png" type="image/x-icon">
+
+    <!-- Fontawesome6-Js-link -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <!-- Bootstrap5-Css-link -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- Owl-carousel-Css-link -->
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+    <!-- select2-Css-link -->
+    <link rel="stylesheet" href="assets/css/select2.min.css">
+    <!-- rprogessbar Css link -->
+    <link rel="stylesheet" href="assets/css/jquery.rprogessbar.min.css">
+
+    <!-- Style_Css_link -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body onload="preloaderFunction()" class="">
+    <!-- Preloader section start -->
+    <div id="preloader">
+        <div class="load">
+            <hr />
+            <hr />
+            <hr />
+            <hr />
+        </div>
+    </div>
+    <!-- Preloader section end -->
+
+
+    <!-- Signup trial installation section start -->
+    <section class="signup-trial-installation-section">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-8 mx-auto">
+                    <div class="progress-header mb-15">
+                        <div class="img-box">
+                            <img src="./assets/img/logo/favicon.png" alt="">
+                        </div>
+                        <div class="text-box">
+                            <h4 class="mb-0">Your talkwave is ready to use...</h4>
+                        </div>
+                    </div>
+                    <div class="signup-progress"></div>
+                    <p class="text-center mb-0">We appreciate your recent sign up for a LiveAgent.
+                        A message will be sent to your email address containing login details, right after your account
+                        is installed.</p>
+                </div>
+                <div class="instruction-videos mt-20">
+                    <h5 class="text-center">Try all communication channels while your LiveAgent is ready.</h5>
+                    <!-- Cmn tabs start -->
+                    <div class="cmn-tabs3 mt-20 mb-80">
+                        <ul class="nav nav-pills gap-3 justify-content-center" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="Chat-tab" data-bs-toggle="pill"
+                                    data-bs-target="#Chat" type="button" role="tab" aria-controls="Chat"
+                                    aria-selected="false">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" value=""
+                                            id="flexCheckDefault" checked>
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            <img src="./assets/img/login-signup/tab-icon-chat.svg" alt="">
+                                            Chat
+                                        </label>
+                                    </div>
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="Calls-tab" data-bs-toggle="pill" data-bs-target="#Calls"
+                                    type="button" role="tab" aria-controls="Calls" aria-selected="false">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" value=""
+                                            id="flexCheckDefault2">
+                                        <label class="form-check-label" for="flexCheckDefault2">
+                                            <img src="./assets/img/login-signup/tab-icon-calls.svg" alt="">
+                                            Calls
+                                        </label>
+                                    </div>
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="video-calls-tab" data-bs-toggle="pill"
+                                    data-bs-target="#video-calls" type="button" role="tab" aria-controls="video-calls"
+                                    aria-selected="false">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" value=""
+                                            id="flexCheckDefault3">
+                                        <label class="form-check-label" for="flexCheckDefault3">
+                                            <img src="./assets/img/login-signup/tab-icon-video-calls.svg" alt="">
+                                            Video calls
+                                        </label>
+                                    </div>
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="contact-forms-tab" data-bs-toggle="pill"
+                                    data-bs-target="#contact-forms" type="button" role="tab"
+                                    aria-controls="contact-forms" aria-selected="false">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" value=""
+                                            id="flexCheckDefault4">
+                                        <label class="form-check-label" for="flexCheckDefault4">
+                                            <img src="./assets/img/login-signup/tab-icon-contact-forms.svg" alt="">
+                                            Contact forms
+                                        </label>
+                                    </div>
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="Forum-tab" data-bs-toggle="pill" data-bs-target="#Forum"
+                                    type="button" role="tab" aria-controls="Forum" aria-selected="false">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" value=""
+                                            id="flexCheckDefault5">
+                                        <label class="form-check-label" for="flexCheckDefault5">
+                                            <img src="./assets/img/login-signup/tab-icon-forum.svg" alt="">
+                                            Forum
+                                        </label>
+                                    </div>
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="Feedbacks-tab" data-bs-toggle="pill"
+                                    data-bs-target="#Feedbacks" type="button" role="tab" aria-controls="Feedbacks"
+                                    aria-selected="false">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" value=""
+                                            id="flexCheckDefault6">
+                                        <label class="form-check-label" for="flexCheckDefault6">
+                                            <img src="./assets/img/login-signup/tab-icon-feedbacks.svg" alt="">
+                                            Feedbacks
+                                        </label>
+                                    </div>
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="Twitter-tab" data-bs-toggle="pill"
+                                    data-bs-target="#Twitter" type="button" role="tab" aria-controls="Twitter"
+                                    aria-selected="false">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" value=""
+                                            id="flexCheckDefault7">
+                                        <label class="form-check-label" for="flexCheckDefault7">
+                                            <img src="./assets/img/login-signup/tab-icon-twitter.svg" alt="">
+                                            Twitter
+                                        </label>
+                                    </div>
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="Gmail-tab" data-bs-toggle="pill" data-bs-target="#Gmail"
+                                    type="button" role="tab" aria-controls="Gmail" aria-selected="false">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" value=""
+                                            id="flexCheckDefault8">
+                                        <label class="form-check-label" for="flexCheckDefault8">
+                                            <img src="./assets/img/login-signup/tab-icon-gmail.svg" alt="">
+                                            Gmail
+                                        </label>
+                                    </div>
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="Facebook-tab" data-bs-toggle="pill"
+                                    data-bs-target="#Facebook" type="button" role="tab" aria-controls="Facebook"
+                                    aria-selected="false">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" value=""
+                                            id="flexCheckDefault9">
+                                        <label class="form-check-label" for="flexCheckDefault9">
+                                            <img src="./assets/img/login-signup/tab-icon-facebook.svg" alt="">
+                                            Facebook
+                                        </label>
+                                    </div>
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="Viber-tab" data-bs-toggle="pill" data-bs-target="#Viber"
+                                    type="button" role="tab" aria-controls="Viber" aria-selected="false">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" value=""
+                                            id="flexCheckDefault10">
+                                        <label class="form-check-label" for="flexCheckDefault10">
+                                            <img src="./assets/img/login-signup/tab-icon-viber.svg" alt="">
+                                            Viber
+                                        </label>
+                                    </div>
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="Whatsapp-tab" data-bs-toggle="pill"
+                                    data-bs-target="#Whatsapp" type="button" role="tab" aria-controls="Whatsapp"
+                                    aria-selected="false">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" value=""
+                                            id="flexCheckDefault11">
+                                        <label class="form-check-label" for="flexCheckDefault11">
+                                            <img src="./assets/img/login-signup/tab-icon-whatsapp.svg" alt="">
+                                            Whatsapp
+                                        </label>
+                                    </div>
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="Slack-tab" data-bs-toggle="pill" data-bs-target="#Slack"
+                                    type="button" role="tab" aria-controls="Slack" aria-selected="false">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="flexRadioDefault" value=""
+                                            id="flexCheckDefault12">
+                                        <label class="form-check-label" for="flexCheckDefault12">
+                                            <img src="./assets/img/login-signup/tab-icon-slack.svg" alt="">
+                                            Slack
+                                        </label>
+                                    </div>
+                                </button>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <!-- Cmn tabs end -->
+
+                    <!-- Cmn tab content start -->
+                    <div class="cmn-tab-content3">
+                        <div class="tab-content" id="pills-tabContent">
+
+                            <div class="tab-pane fade show active" id="Chat" role="tabpanel" aria-labelledby="Chat-tab"
+                                tabindex="0">
+                                <video autoplay loop muted
+                                    src="https://www.liveagent.com/app/themes/liveagent/assets/videos/web-widget.mp4?ver=1.25.33"></video>
+                            </div>
+
+                            <div class="tab-pane fade" id="Calls" role="tabpanel" aria-labelledby="Calls-tab"
+                                tabindex="0">
+                                <video autoplay loop muted
+                                    src="https://www.liveagent.com/app/themes/liveagent/assets/videos/phone-call.mp4?ver=1.25.33"></video>
+
+                            </div>
+                            <div class="tab-pane fade" id="video-calls" role="tabpanel"
+                                aria-labelledby="video-calls-tab" tabindex="0">
+                                <video autoplay loop muted
+                                    src="https://www.liveagent.com/app/themes/liveagent/assets/videos/video-call.mp4?ver=1.25.33"></video>
+
+                            </div>
+                            <div class="tab-pane fade" id="contact-forms" role="tabpanel"
+                                aria-labelledby="contact-forms-tab" tabindex="0">
+                                <video autoplay loop muted
+                                    src="https://www.liveagent.com/app/themes/liveagent/assets/videos/contact-form.mp4?ver=1.25.33"></video>
+                            </div>
+                            <div class="tab-pane fade" id="Forum" role="tabpanel" aria-labelledby="Forum-tab"
+                                tabindex="0">
+                                <video autoplay loop muted
+                                    src="https://www.liveagent.com/app/themes/liveagent/assets/videos/forum.mp4?ver=1.25.33"></video>
+
+                            </div>
+                            <div class="tab-pane fade" id="Feedbacks" role="tabpanel" aria-labelledby="Feedbacks-tab"
+                                tabindex="0">
+                                <video autoplay loop muted
+                                    src="https://www.liveagent.com/app/themes/liveagent/assets/videos/feedback.mp4?ver=1.25.33"></video>
+                            </div>
+                            <div class="tab-pane fade" id="Twitter" role="tabpanel" aria-labelledby="Twitter-tab"
+                                tabindex="0">
+                                <video autoplay loop muted
+                                    src="https://www.liveagent.com/app/themes/liveagent/assets/videos/twitter.mp4?ver=1.25.33"></video>
+                            </div>
+                            <div class="tab-pane fade" id="Gmail" role="tabpanel" aria-labelledby="Gmail-tab"
+                                tabindex="0">
+                                <video autoplay loop muted
+                                    src="https://www.liveagent.com/app/themes/liveagent/assets/videos/mail.mp4?ver=1.25.33"></video>
+                            </div>
+                            <div class="tab-pane fade" id="Facebook" role="tabpanel" aria-labelledby="Facebook-tab"
+                                tabindex="0">
+                                <video autoplay loop muted
+                                    src="https://www.liveagent.com/app/themes/liveagent/assets/videos/facebook.mp4?ver=1.25.33"></video>
+                            </div>
+                            <div class="tab-pane fade" id="Viber" role="tabpanel" aria-labelledby="Viber-tab"
+                                tabindex="0">
+                                <video autoplay loop muted
+                                    src="https://www.liveagent.com/app/themes/liveagent/assets/videos/viber.mp4?ver=1.25.33"></video>
+                            </div>
+                            <div class="tab-pane fade" id="Whatsapp" role="tabpanel" aria-labelledby="Whatsapp-tab"
+                                tabindex="0">
+                                <video autoplay loop muted
+                                    src="https://www.liveagent.com/app/themes/liveagent/assets/videos/whatsapp.mp4?ver=1.25.33"></video>
+                            </div>
+                            <div class="tab-pane fade" id="Slack" role="tabpanel" aria-labelledby="Slack-tab"
+                                tabindex="0">
+                                <video autoplay loop muted
+                                    src="https://www.liveagent.com/app/themes/liveagent/assets/videos/slack.mp4?ver=1.25.33"></video>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Cmn tab content end -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Signup trial installation section end -->
+
+
+
+
+
+
+
+
+
+
+    <!-- Jquery_Js_link -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <!-- waypoints Js link -->
+    <script src="assets/js/jquery.waypoints.min.js"></script>
+    <!-- Bootstrap_Js_link -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Owl_carausel_Js_link -->
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <!-- select2_Js_link -->
+    <script src="assets/js/select2.min.js"></script>
+    <!-- rProgressbar Js link -->
+    <script src="assets/js/jQuery.rProgressbar.min.js"></script>
+
+
+    <!-- Main_Js_link -->
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        document.querySelectorAll('.cmn-tabs3 .nav-link').forEach(navLink => {
+            navLink.addEventListener('click', () => {
+                let radioInput = navLink.closest('.nav-item').querySelector('.form-check-input');
+                if (radioInput) {
+                    radioInput.checked = true;
+                }
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>digiGoods</title>
+    <!-- Favicon-link -->
+    <link rel="shortcut icon" href="assets/img/logo/favicon.png" type="image/x-icon">
+
+    <!-- Fontawesome6-Js-link -->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <!-- <link rel="stylesheet" href="assets/css/fontawesome.min.css"> -->
+    <!-- Bootstrap5-Css-link -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- Owl-carousel-Css-link -->
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+
+    <!-- select2-Css-link -->
+    <link rel="stylesheet" href="assets/css/select2.min.css">
+
+
+
+
+
+    <!-- Style Css link -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body onload="preloaderFunction()" class="">
+
+    <!-- Preloader section start -->
+    <div id="preloader">
+        <div class="load">
+            <hr />
+            <hr />
+            <hr />
+            <hr />
+        </div>
+    </div>
+    <!-- Preloader section end -->
+
+
+
+    <!-- Nav section start -->
+    <nav class="navbar fixed-top navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand logo" href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar">
+                <i class="fa-light fa-list"></i>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbar">
+                <div class="offcanvas-header">
+                    <a class="navbar-brand" href="index.html"><img class="logo" src="assets/img/logo/logo-white.png"
+                            alt=""></a>
+                    <button type="button" class="cmn-btn-close" data-bs-dismiss="offcanvas" aria-label="Close"><i
+                            class="fa-light fa-arrow-right"></i></button>
+                </div>
+                <div class="offcanvas-body align-items-center justify-content-between">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pricing.html">pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">contact</a>
+                        </li>
+                        <li class="nav-item d-flex align-items-center">
+                            <a class="get-start-btn" href="contact.html">demo</a>
+                        </li>
+                        <li class="nav-item d-flex align-items-center">
+                            <a class="login-btn" href="contact.html">free trial</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="nav-right">
+                <ul class="custom-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html"><i class="fa-regular fa-user"></i></a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <div class="profile-box">
+                            <div class="profile">
+                                <img src="./assets/img/Person/1.jpg" class="img-fluid" alt="">
+                            </div>
+                            <ul class="user-dropdown">
+                                <li>
+                                    <a href="user-panel.html"> <i class="fal fa-user"></i> View Profile </a>
+                                </li>
+                                <li>
+                                    <a href="support-ticket.html"> <i class="fal fa-user-headset"></i> Support </a>
+                                </li>
+                                <li>
+                                    <a href="edit-profile.html"> <i class="fal fa-user-cog"></i> Account Settings
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href=""> <i class="fal fa-sign-out-alt"></i> Sign Out </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li> -->
+                    <li class="nav-item">
+                        <div class="language-box-large">
+                            <div class="dropdown">
+                                <button class="cmn-dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <img src="./assets/img/mini-flag/us.svg" alt="">
+                                    <i class="fa-solid fa-angle-down"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <div class="region-container">
+                                        <div class="region-box-large">
+                                            <div class="region-box">
+                                                <h5 class="mb-15">Europe</h5>
+                                                <div class="region-list">
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/bg.svg" alt="" />
+                                                        Български
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/cz.svg" alt="" />
+                                                        Čeština
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/dk.svg" alt="" />
+                                                        Dansk
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/de.svg" alt="" />
+                                                        Deutsch
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/ee.svg" alt="" />
+                                                        Eesti
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/es.svg" alt="" />
+                                                        Español
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/fr.svg" alt="" />
+                                                        Français
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/gr.svg" alt="" />
+                                                        Ελληνικα
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/hr.svg" alt="" />
+                                                        Hrvatski
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/it.svg" alt="" />
+                                                        Italiano
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/bg.svg" alt="" />
+                                                        Български
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/cz.svg" alt="" />
+                                                        Čeština
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/dk.svg" alt="" />
+                                                        Dansk
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/de.svg" alt="" />
+                                                        Deutsch
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/ee.svg" alt="" />
+                                                        Eesti
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/es.svg" alt="" />
+                                                        Español
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/fr.svg" alt="" />
+                                                        Français
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/gr.svg" alt="" />
+                                                        Ελληνικα
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/hr.svg" alt="" />
+                                                        Hrvatski
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/it.svg" alt="" />
+                                                        Italiano
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/es.svg" alt="" />
+                                                        Español
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="region-box-small">
+                                            <div class="region-box">
+                                                <h5 class="mb-15">Asia</h5>
+                                                <div class="region-list">
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/cn.svg" alt="" />
+                                                        简体中文
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/ph.svg" alt="" />
+                                                        Tagalog
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/vn.svg" alt="" />
+                                                        Tiếng Việt
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                            <div class="region-box">
+                                                <h5 class="mt-20 mb-15">Middle East</h5>
+                                                <div class="region-list">
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/sa.svg" alt="" />
+                                                        العربية
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="region-box">
+                                                <h5 class="mt-20 mb-15">America</h5>
+                                                <div class="region-list">
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/us.svg" alt="" />
+                                                        English
+                                                    </a>
+                                                    <a href="" class="item">
+                                                        <img src="./assets/img/mini-flag/br.svg" alt="" />
+                                                        Português
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Nav section end -->
+
+    <!-- Bottom Mobile Tab nav section start -->
+    <ul class="nav bottom-nav fixed-bottom d-lg-none">
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="offcanvas" role="button" aria-controls="offcanvasNavbar"
+                href="#offcanvasNavbar" aria-current="page"><i class="fa-light fa-list"></i></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa-light fa-planet-ringed"></i></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active"><i class="fa-light fa-house"></i></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa-light fa-address-book"></i></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><i class="fa-light fa-user"></i></a>
+        </li>
+    </ul>
+    <!-- Bottom Mobile Tab nav section end -->
+
+    <!-- Author help section start -->
+    <section class="author-help-section pt-50">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-xl-8 col-lg-7 col-md-6">
+                    <div class="breadcrumb-area text-start">
+                        <ul class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="author-help-single-category.html"><i
+                                        class="fa-regular fa-handshake-angle"></i>
+                                    help center</a>
+                            </li>
+                            <li class="breadcrumb-item"><a href="author-help-single-category.html">
+                                    Becoming an Author</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Your Author Profile Page</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-5 col-md-6">
+                    <div class="search-box3">
+                        <input type="text" class="form-control" placeholder="Search here...">
+                        <button type="submit" class="search-btn"><i class="far fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-20">
+                <div class="row g-4">
+                    <div class="col-lg-8 ">
+                        <h3>Your Author Profile Page</h3>
+                        <div class="article-info mt-30">
+                            <p> <strong>Summary:</strong> Your Author Profile page allows you to manage your items and
+                                your personal information such as your tax and payout details.</p>
+                            <h4 class="mt-20 mb-10">Manage your profile</h4>
+                            <p>This section provides you with links to enter, or update, your <a href=""
+                                    class="link">tax information</a> and payout
+                                method. If you haven’t already completed an <a href="" class="link">ID check</a> to
+                                verify your identity, you will
+                                receive one after your first item is approved for publication.</p>
+                            <img src="./assets/img/help/manage-your-profile.png" alt="">
+                            <h4 class="mt-30 mb-10">Balances</h4>
+                            <p>Here you can see your current earnings balances for both Envato Market and Envato
+                                Elements (if you are an Elements contributor). The balances shown are the amounts we
+                                will attempt to pay you each month and will increase with the previous month’s earnings
+                                around the 8th of the month. Read <a href="" class="link">our forum post</a> for more
+                                information about your balances displayed in this section and see our <a href=""
+                                    class="link">Introduction to Earnings</a> article for more general information about
+                                earnings.</p>
+
+                            <img src="./assets/img/help/balances.png" alt="">
+                            <h4 class="mt-30 mb-10">Discover our ecosystem</h4>
+                            <p>In this section, you can learn about our different shopfronts and marketplaces and also
+                                access our <a href="" class="link">Upload Guide </a>and <a href="" class="link">Upload
+                                    Methods</a> articles for information on how to upload your items.</p>
+                            <div class="alert alert-warning alert-dismissible mt-15" role="alert">
+                                <div class="icon-area">
+                                    <i class="fa-light fa-triangle-exclamation"></i>
+                                </div>
+                                <div class="text-area">
+                                    <div class="description">Please note, in order to upload and publish content to
+                                        Envato Elements, you must first submit an application for review. If approved,
+                                        you will then be able to start uploading content to Envato Elements for the
+                                        content type you were approved for. Please submit your application here. You can
+                                        upload to Envato Market sites without submitting an application. </div>
+                                </div>
+
+                            </div>
+                            <img src="./assets/img/help/discover-our-ecosystem.png" alt="">
+
+                        </div>
+                        <hr class="cmn-hr2 mt-70">
+                        <div class="article-vote-question-box mt-30">
+                            <div class="article-vote-box text-center">
+                                <h5 class="mb-20">Was this article helpful?</h5>
+                                <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1"
+                                        autocomplete="off" checked>
+                                    <label class="btn btn-outline-success" for="btnradio1">yes</label>
+
+                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2"
+                                        autocomplete="off">
+                                    <label class="btn btn-outline-success" for="btnradio2">no</label>
+                                </div>
+                                <p class="mt-20 mb-0"><small>63 out of 93 found this helpful
+                                    </small></p>
+                            </div>
+                            <div class="article-question-box mt-30 text-center">
+                                <h4>Still no luck? We can help!</h4>
+                                <p>Get in touch with our friendly support team.</p>
+                                <a href="author-help-request.html" class="cmn-btn mt-15">Submit a request</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 ">
+                        <div class="help-sidebox">
+                            <h4>Articles in this section</h4>
+                            <div class="category-item-list">
+                                <a href="" class="category-item">
+                                    <span>Author ID Checks FAQs</span>
+                                    <span><i class="fa-regular fa-angle-right"></i></span>
+                                </a>
+                                <a href="" class="category-item">
+                                    <span>What we expect in an Envato Author
+                                    </span>
+                                    <span><i class="fa-regular fa-angle-right"></i></span>
+                                </a>
+                                <a href="" class="category-item">
+                                    <span>How to Join and Sell on Envato</span>
+                                    <span><i class="fa-regular fa-angle-right"></i></span>
+                                </a>
+                                <a href="" class="category-item">
+                                    <span>How to Set Up an Envato Elements Account</span>
+                                    <span><i class="fa-regular fa-angle-right"></i></span>
+                                </a>
+                                <a href="" class="category-item">
+                                    <span>Becoming an Envato Author FAQs</span>
+                                    <span><i class="fa-regular fa-angle-right"></i></span>
+                                </a>
+                                <a href="" class="category-item">
+                                    <span>Author ID Checks</span>
+                                    <span><i class="fa-regular fa-angle-right"></i></span>
+                                </a>
+                                <a href="" class="category-item">
+                                    <span>Your Author Profile Page</span>
+                                    <span><i class="fa-regular fa-angle-right"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Author help section end -->
+
+
+
+    <!-- Footer Section start -->
+    <section class="footer-section">
+        <!-- Newsletter section start -->
+        <div class="newsletter-section">
+            <div class="container">
+                <div class="row align-items-center g-4 g-sm-5">
+                    <div class="col-lg-6 col-md-5">
+                        <div class="content-area">
+                            <h2 class="subscribe-normal-text">Subscribe to Our <br> Newsletter</h2>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-6 col-md-7">
+                        <p class="mb-20 cmn-para-text">It is a long established fact that a reader will be distracted by
+                            the readable content of a page when looking at its layout</p>
+                        <form class="newsletter-form">
+                            <input type="text" class="form-control" placeholder="Enter your mail">
+                            <button type="button" class="subscribe-btn">Subscribe</button>
+                        </form>
+                    </div>
+                    <hr class="cmn-hr">
+                </div>
+            </div>
+        </div>
+        <!-- Newsletter section end -->
+
+        <div class="container">
+            <div class="row gy-4 gy-sm-5">
+                <div class="col-lg-4 col-sm-6">
+                    <div class="footer-widget">
+                        <div class="widget-logo">
+                            <a href="#nav_area"><img class="logo" src="assets/img/logo/logo-white.png"
+                                    alt="talkwave"></a>
+                        </div>
+                        <p>
+                            Experience the talkwave Advantage - Empowering Social Success with Data-Driven
+                            Solutions.
+                        </p>
+
+                        <ul class="social-box mt-30">
+                            <li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href=""><i class="fab fa-twitter"></i></a></li>
+                            <li><a href=""><i class="fab fa-linkedin"></i></a></li>
+                            <li><a href=""><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-sm-6">
+                    <div class="footer-widget">
+                        <h5 class="widget-title">Quick Links</h5>
+                        <ul>
+                            <li><a class="widget-link" href="about.html">About</a></li>
+                            <li><a class="widget-link" href="faq.html">FAQ</a></li>
+                            <li><a class="widget-link" href="index.html">Home</a></li>
+                            <li><a class="widget-link" href="blog.html">Blog</a></li>
+                            <li><a class="widget-link" href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 pt-sm-0 pt-3 ps-lg-5">
+                    <div class="footer-widget">
+                        <h5 class="widget-title">Company Policy</h5>
+                        <ul>
+                            <li><a class="widget-link" href="policy.html">Privacy Policy</a></li>
+                            <li><a class="widget-link" href="">Refund Policy</a></li>
+                            <li><a class="widget-link" href="">Terms of use</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6 pt-sm-0 pt-3">
+                    <div class="footer-widget">
+                        <h5 class="widget-title">Contact Us</h5>
+                        <p class="contact-item"><i class="fa-regular fa-location-dot"></i> 10714 163rd Pl, Orland Park,
+                            IL 60467, United States</p>
+                        <p class="contact-item"><i class="fa-regular fa-envelope"></i> email@website.com</p>
+                        <p class="contact-item"><i class="fa-regular fa-phone"></i> 354-4156745674</p>
+                    </div>
+                </div>
+            </div>
+            <hr class="cmn-hr">
+
+            <!-- Copyright-area-start -->
+            <div class="copyright-area">
+                <div class="row gy-4 justify-content-center">
+                    <div class="col-sm-6">
+                        <p>Copyright ©2023 <a class="highlight" href="index.html">talkwave</a> All Rights
+                            Reserved
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- Copyright-area-end -->
+        </div>
+    </section>
+    <!-- Footer Section end -->
+
+
+
+
+
+
+    <!-- Jquery Js link -->
+    <!-- <script src="assets/js/jquery-3.6.1.min.js"></script> -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+
+    <!-- Bootstrap Js link -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Owl carausel Js link -->
+    <script src="assets/js/owl.carousel.min.js"></script>
+
+
+    <!-- select2 Js link -->
+    <script src="assets/js/select2.min.js"></script>
+
+
+    <!-- intlTelInput Js link -->
+    <script src="assets/js/intlTelInput.min.js"></script>
+
+
+
+
+
+
+
+
+    <!-- Main Js link -->
+    <script src="assets/js/main.js"></script>
+
+
+</body>
+
+</html>
